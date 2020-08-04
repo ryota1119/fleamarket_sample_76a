@@ -1,3 +1,69 @@
-// Place all the styles related to the items controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.header {
+  height: 100px;
+  background-color: white;
+  padding: 0 60px;
+  margin-bottom: 10px;
+  color: #000000;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  &__inner {
+    padding-top: 15px;
+    &__upper {
+      height: 50px;
+      &__right {
+        height: 10px;
+        width: 1000px;
+      }
+    }
+    &__nav {
+      padding-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      color: #333333;
+      &__left__ul {
+        display: flex;
+        .nav-btn {
+          padding-right: 46px;
+        }
+      }
+      &__right__ul {
+        display: flex;
+        .nav-btn {
+          padding-left:16px
+        }
+      }
+    }
+  }
+ }
+
+.main {
+  &__mv {
+    background-image: url("material/pict/bg-mainVisual-pict_pc.jpg");
+    background-size: 100%;
+    height: 560px;
+    padding: 0 60px;
+    display: flex;
+    align-items: center;
+    &__content {
+      padding-top: 35px;
+      text-shadow: 0 0 5px rgba(0,0,0,0.4);
+      color: #fff;
+      &-ttl {
+        font-size: 60px;
+        line-height: 1.2;
+      }
+      &-txt {
+        font-size: 18px;
+        line-height: 1.7;
+        margin: 16px 0 0 0;
+      }
+    }
+  }
+  
+}
+
+.footer {
+  height: 100px;
+  background-color: blue;
+}

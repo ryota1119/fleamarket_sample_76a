@@ -1,0 +1,39 @@
+.header
+  .header__inner
+    .header__innner__upper
+      .header__innner__upper__left
+      = link_to "#", class: "header__img" do
+        = image_tag 'material/logo/logo.png', alt: 'ヘッダーロゴの画像', height: '40px', width: '140px', class: 'header-logo'
+      .header__inner__upper__right
+      -# = form_for do |f|
+      -#   = f.text_field placeholder: "キーワードから探す", class: "header__search-form"
+      -#   = f.submit
+      -# ビュー実装後に記述
+    .header__inner__nav
+      .header__innner__nav__left
+        %ul.header__inner__nav__left__ul
+          %li.nav-btn カテゴリー
+          %li.nav-btn ブランド
+      .header__inner__nav__right
+        %ul.header__inner__nav__right__ul
+          %li.nav-btn ログイン
+          %li.nav-btn 新規会員登録
+
+.main
+  .main__mv
+    .main__mv__content
+      .main__mv__content-ttl 人生を変えるフリマアプリ
+      .main__mv__content-txt FURIMAはだれでもかんたんに出品・購入できる<br>フリマアプリです
+      .main__mv__content-btn
+        .main__mv__content-btn__apple
+          -# = = image_tag '', alt: '', height: '', width: '', class: ''
+        .main__mv__content-btn__google
+.footer
+  .fotter__innner
+    .fotter__innner__upper
+      .fotter__innner__upper--nav
+        -# <ul>
+        -#   <li>FURIMAについて</li>
+        -#   <li>FURIMAを見る</li>
+        -#   <li>ヘルプ＆ガイド</li>
+        -# </ul>
