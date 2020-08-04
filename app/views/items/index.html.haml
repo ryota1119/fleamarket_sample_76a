@@ -28,6 +28,37 @@
         .main__mv__content-btn__apple
           -# = = image_tag '', alt: '', height: '', width: '', class: ''
         .main__mv__content-btn__google
+  .main__feature
+    %h2.main__feature__ttl FURIMAが選ばれる3つの理由
+    %ul.lists
+      %li.list
+        .list-img
+          %span.number 1
+          = image_tag 'material/pict/pict-reason-01.jpg', height: '300px', width: '300px', class: 'list-pict'
+        %h3.list-txt <span>3分</span>ですぐに出品
+        %p.list-description スマホで入力するだけで簡単に出品できる！
+      %li.list
+        .list-img
+          %span.number 2
+          = image_tag 'material/pict/pict-reason-02.jpg', height: '300px', width: '300px', class: 'list-pict'
+        %h3.list-txt <span>シンプル</span>で使いやすい
+        %p.list-description めんどくさい入力は必要なく、検索も購入もスムーズ！
+      %li.list
+        .list-img
+          %span.number 3
+          = image_tag 'material/pict/pict-reason-03.jpg', height: '300px', width: '300px', class: 'list-pict'
+        %h3.list-txt 手数料<span>業界最安</span>
+        %p.list-description 最大3%でお得に出品&購入！
+  .main__middle
+    .main__middle__innner
+      %h2.main__middle__innner__ttl 会員数日本一
+      %p.main__middle__innner__txt FURIMAは、フリマアプリで最も人気。<br>出品・購入回数も業界最多です！<br>ほしかったあの商品にも出会えるかもしれません。
+      .main__middle__btn
+        .main__middle__btn-apple
+        .main__middle__btn-google
+
+
+
 .footer
   .fotter__innner
     .fotter__innner__upper
