@@ -128,7 +128,7 @@
       
     }
   }
-  .main__middle {
+  &__middle {
     background-image: url("material/pict/bg-topMiddleDl-pict.jpg");
     background-position: bottom right;
     height: 400px;
@@ -150,6 +150,64 @@
         font-size: 18px;
         margin: 20px 0 30px;
         line-height: 1.5;
+      }
+    }
+  }
+  &__items{
+    padding: 80px 0 0;
+    background-color: #f8f8f8;
+    height: 100%;
+    &__ttl {
+      text-align: center;
+      font-size: 28px;
+      line-height: 1.4;
+      font-weight: bold;
+    }
+    &__box {
+      &__txt {
+        font-weight: bold;
+        font-size: 24px;
+        color: #3ccace;
+        text-align: center;
+      }
+      &__lists {
+        width: 780px;
+        margin: 26px auto;
+        display: flex;
+        justify-content: space-around;
+        &__list {
+          width: 220px;
+          display: inline-block;
+          background-color: white;
+          &__img {
+            position: relative;
+            overflow: hidden;
+            margin: 0;
+            z-index: auto
+          }
+          &__body {
+            background-color: white;
+            color: #333;
+            padding: 16px;
+            &__name {
+              overflow: hidden;
+              line-height: 1.5;
+              font-size: 16px;
+              text-align: left;
+            }
+            &__details {
+              ul {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+              }
+              p {
+                font-size: 10px;
+                text-align: left;
+              }
+            }
+          }
+        }
       }
     }
   }
