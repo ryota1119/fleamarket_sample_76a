@@ -23,3 +23,31 @@ Things you may want to cover:
 
 * ...
 # fleamarket_sample_76a
+
+# DB設計
+## ER Diagram
+***
+![Uploading bf4805b9d6f107f2bc42393c5314cbd0.png…]()
+
+## usersテーブル
+***
+|Column|Type|Options|
+|:-----|---:|:-----:|
+|nickname|string|null: false|
+|email|string|null: false, unipue: true|
+|password|string|null: false, unipue: true|
+|password_conform|string|null: false|
+|first_name|string|null: false|
+|last_name|string|null: false|
+|first_name|string|null: false|
+|last_name_kana|string|null: false|
+|first_name_kana|string|null: false|
+|last_name_kana|string|null: false|
+|birthday|data|null: false,|
+### Association
+***
+- has_many :items, dependent:delete_all
+- has_many :chats, dependent:delete_all
+- has_many :favorites, dependent:delete_all
+- has_one :address, dependent:delete
+- has_one :credit_card, dependent:delete
