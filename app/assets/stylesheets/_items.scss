@@ -1,37 +1,88 @@
 .header {
-  height: 100px;
-  background-color: white;
   padding: 0 60px;
-  margin-bottom: 10px;
-  color: #000000;
-  font-size: 14px;
-  display: flex;
-  justify-content: center;
   &__inner {
-    padding-top: 15px;
+    max-width: 1040px;
+    width: 100%;
+    min-height: 82px;
+    margin: 0 auto;
+    padding: 15px 0 0;
     &__upper {
-      height: 50px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      &__left {
+        padding-bottom: 10px;
+        margin-right: 30px;
+        border-radius: 4px;
+        .header__icon {
+          width: 140px;
+          display: block;
+          .header__logo {
+            width: 100%;
+            display: block;
+          }
+        }
+      }
       &__right {
-        height: 10px;
+        margin-left: auto;
         width: 1000px;
+        form {
+          display: flex;
+          width: 100%;
+          margin-bottom: 5px;
+          &__search-box {
+            width: calc(100% - 26px);
+            height: 36px;
+            padding: 0 0 0 5px;
+          }
+          &__search-btn {
+            width: 36px;
+            border: 0;
+            cursor: pointer;
+            background-color: #3ccace;
+            padding: 8px;
+            &__icon {
+              &__img {
+                width: 100%;
+                vertical-align: bottom;
+              }
+            }
+          }
+        }
       }
     }
     &__nav {
-      padding-top: 10px;
+      font-size: 14px;
+      margin-bottom: 10px;
       display: flex;
-      justify-content: space-between;
-      color: #333333;
-      &__left__ul {
-        display: flex;
-        .nav-btn {
-          padding-right: 46px;
+      &__left {
+          display: flex;
+          position: relative;
+          &__list {
+            a {
+              text-decoration: none;
+              color: #333;
+              line-height: 32px;
+              padding-right: 46px;
+            }
+          }
         }
-      }
-      &__right__ul {
-        display: flex;
-        .nav-btn {
-          padding-left:16px
-        }
+      &__right {
+          display: flex;
+          margin-left: auto;
+          &__list {
+            color: #333;
+            line-height: 38px;
+            padding: 0 0 0 16px;
+            padding-left:16px;
+            a {
+              display: flex;
+              align-items: center;
+              color: #333;
+              text-decoration: none;
+              line-height: 32px;
+            }
+          }
       }
     }
   }

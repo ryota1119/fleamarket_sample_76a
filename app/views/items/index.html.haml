@@ -1,23 +1,28 @@
-.header
+%header.header
   .header__inner
-    .header__innner__upper
-      .header__innner__upper__left
-      = link_to "#", class: "header__img" do
-        = image_tag 'material/logo/logo.png', alt: 'ヘッダーロゴの画像', height: '40px', width: '140px', class: 'header-logo'
+    .header__inner__upper
+      %h1.header__inner__upper__left
+        = link_to "#", class: "header__icon" do
+          = image_tag 'material/logo/logo.png', alt: 'ヘッダーロゴの画像', height: '40px', width: '140px', class: 'header__logo'
       .header__inner__upper__right
-      -# = form_for do |f|
-      -#   = f.text_field placeholder: "キーワードから探す", class: "header__search-form"
-      -#   = f.submit
-      -# ビュー実装後に記述
+        = form_tag do
+          .header__inner__upper__right__search-box
+            = text_field_tag :items, "キーワードから探す"
+          .header__inner__upper__right__search-btn
+            = submit_tag 
+            -# .header__inner__upper__right__search-btn__icon
+            -#   = image_tag 'material/icon/icon-search 1.png', class: 'header__inner__upper__right__search-btn__icon-img'
     .header__inner__nav
-      .header__innner__nav__left
-        %ul.header__inner__nav__left__ul
-          %li.nav-btn カテゴリー
-          %li.nav-btn ブランド
-      .header__inner__nav__right
-        %ul.header__inner__nav__right__ul
-          %li.nav-btn ログイン
-          %li.nav-btn 新規会員登録
+      %ul.header__inner__nav__left
+        %li.header__inner__nav__left__list
+          = link_to "カテゴリー"
+        %li.header__inner__nav__left__list
+          = link_to "ブランド"
+      %ul.header__inner__nav__right
+        %li.header__inner__nav__right__list
+          = link_to "ログイン"
+        %li.header__inner__nav__right__list
+          = link_to "新規会員登録"
 
 .main
   .main__mv
