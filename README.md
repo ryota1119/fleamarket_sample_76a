@@ -47,7 +47,7 @@ Things you may want to cover:
 ### Association
 - has_many :items, dependent:delete_all
 - has_many :chats, dependent:delete_all
-- has_many :items, through: :favorites
+- has_many :favorite_items, through: :favorites, source: :item
 - has_many :favorites
 - has_one :address, dependent:delete
 - has_one :credit_card, dependent:delete
@@ -61,11 +61,11 @@ Things you may want to cover:
 |name|string|null: false|
 |description|text|null: false|
 |brand|string|null: false|
-|condition_id|references|null: false, foreign_key: true|
-|status_id|references|null: false, foreign_key: true|
-|send_price_id|references|null: false, foreign_key: true|
-|ship_from_id|references|null: false, foreign_key: true|
-|ship_day_id|references|null: false, foreign_key: true|
+|condition|integer|null: false (enum)|
+|status|integer|null: false (enum)|
+|shipping_costs|integer|null: false (enum)|
+|shipping_from|integer|null: false (enum)|
+|shipping_date|integer|null: false (enum)|
 |price|intger|null: false|
 |seller_id|references|null: false, foreign_key: true|
 |buyer_id_id|references|null: false, foreign_key: true|
@@ -73,14 +73,8 @@ Things you may want to cover:
 ### Association
 - has_many :images, dependent:delete_all
 - has_many :chats, dependent:delete_all
-- has_many :users, through: :favorites
 - has_many :favorites
 - belongs_to :user
-- belongs_to :ship_form
-- belongs_to :status
-- belongs_to :send_price
-- belongs_to :ship_from
-- belongs_to :ship_day
 - belongs_to :category
 - belongs_to :seller, class_name: 'User'
 - belongs_to :buyer, class_name: 'User'
@@ -140,47 +134,10 @@ Things you may want to cover:
 - has_many :items
 ***
 
-### Statusテーブル
-|Column|Type|Options|
-|:-----|:---|:-----:|
-|status|string|null :false|
-|item_id|references|null: false,foregin_key: true|
-### Association
-- has_many :items
-***
-
-### Send_priceテーブル
-|Column|Type|Options|
-|:-----|:---|:-----:|
-|price|string|null :false|
-|item_id|references|null: false,foregin_key: true|
-### Association
-- has_many :items
-***
-
-### Ship_fromテーブル
-|Column|Type|Options|
-|:-----|:---|:-----:|
-|name|string|null :false|
-|item_id|references|null: false,foregin_key: true|
-### Association
-- has_many :items
-***
-
-### Ship_dayテーブル
-|Column|Type|Options|
-|:-----|:---|:-----:|
-|dates|string|null :false|
-|item_id|references|null: false,foregin_key: true|
-### Association
-- has_many :items
-***
-
 ### Categoriesテーブル
 |Column|Type|Options|
 |:-----|:---|:-----:|
 |name|string|null :false|
-|item_id|references|null: false,foregin_key: true|
 ### Association
-- has_many :items
+has_many :items
 ***
