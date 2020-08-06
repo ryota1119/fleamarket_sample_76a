@@ -125,15 +125,6 @@ Things you may want to cover:
 - belongs_to :item
 ***
 
-### Ship_fromテーブル
-|Column|Type|Options|
-|:-----|:---|:-----:|
-|name|string|null :false|
-|item_id|references|null: false,foregin_key: true|
-### Association
-- has_many :items
-***
-
 ### Categoriesテーブル
 |Column|Type|Options|
 |:-----|:---|:-----:|
