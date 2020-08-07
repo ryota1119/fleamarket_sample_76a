@@ -46,11 +46,11 @@ Things you may want to cover:
 |last_name_kana|string|null: false|
 |birthday|data|null: false|
 ### Association
-- has_many :items, dependent:delete_all
-- has_many :chats, dependent:delete_all
+- has_many :items, dependent:destroy
+- has_many :chats, dependent:destroy
 - has_many :favorited_items, through: :favorites, source: :item
-- has_one :address, dependent:delete
-- has_one :credit_card, dependent:delete
+- has_one :address, dependent:destroy
+- has_one :credit_card, dependent:destroy
 - has_many :sell_items, class_name: 'Item', foreign_key: seller_id
 - has_many :buy_items, class_name: 'Item', foreign_key: buyer_id
 ***
@@ -66,13 +66,13 @@ Things you may want to cover:
 |shipping_costs|integer|null: false (enum)|
 |shipping_from|integer|null: false (enum)|
 |shipping_date|integer|null: false (enum)|
-|price|intger|null: false|
+|price|integer|null: false|
 |seller_id|references|null: false, foreign_key: true|
 |buyer_id_id|references|null: false, foreign_key: true|
 |category_id|references|null: false, foreign_key: true|
 ### Association
-- has_many :images, dependent:delete_all
-- has_many :chats, dependent:delete_all
+- has_many :images, dependent:destroy
+- has_many :chats, dependent:destroy
 - has_many :favorites
 - belongs_to :user
 - belongs_to :category
