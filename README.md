@@ -94,7 +94,7 @@ Things you may want to cover:
 - belongs_to :user
 ***
 
-### Credit_cardsテーブル
+## Credit_cardsテーブル
 |Column|Type|Options|
 |:-----|:---|:-----:|
 |customer_id|string|null: false|
@@ -104,7 +104,7 @@ Things you may want to cover:
 - belongs_to :user
 ***
 
-### Faviritesテーブル
+## Faviritesテーブル
 |Column|Type|Options|
 |:-----|:---|:-----:|
 |user_id|references|null: false,foregin_key: true|
@@ -114,7 +114,7 @@ Things you may want to cover:
 - belongs_to :item
 ***
 
-### Chatsテーブル
+## Chatsテーブル
 |Column|Type|Options|
 |:-----|:---|:-----:|
 |text|text|null :false|
@@ -125,7 +125,7 @@ Things you may want to cover:
 - belongs_to :item
 ***
 
-### Categoriesテーブル
+## Categoriesテーブル
 |Column|Type|Options|
 |:-----|:---|:-----:|
 |name|string|null :false|
