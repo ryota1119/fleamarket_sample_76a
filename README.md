@@ -27,7 +27,8 @@ Things you may want to cover:
 # DB設計
 ***
 ## ER Diagram
-![Uploading 153081739e4e6a6d1dbe19faf84fae11.png…]()
+<img width="1262" alt="3ceed874f69d0f51b09b8099d5660ddc" src="https://user-images.githubusercontent.com/65844442/89635888-acb56900-d8e2-11ea-953b-70ea5055d1b6.png">
+
 ***
 
 ## Usersテーブル
@@ -47,8 +48,7 @@ Things you may want to cover:
 ### Association
 - has_many :items, dependent:delete_all
 - has_many :chats, dependent:delete_all
-- has_many :favorite_items, through: :favorites, source: :item
-- has_many :favorites
+- has_many :favorited_items, through: :favorites, source: :item
 - has_one :address, dependent:delete
 - has_one :credit_card, dependent:delete
 - has_many :sell_items, class_name: 'Item', foreign_key: seller_id
