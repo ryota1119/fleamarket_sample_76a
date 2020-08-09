@@ -1,22 +1,73 @@
-.container
-  %h2 新規会員登録
-  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-    = render "devise/shared/error_messages", resource: resource
-    .field
-      = f.label :email,"メールアドレス"
-      %br/
-      = f.email_field :email, autofocus: true, autocomplete: "email"
-    .field
-      = f.label :password,"パスワード"
-      - if @minimum_password_length
-        %em
-          (#{@minimum_password_length} 文字以上)
-      %br/
-      = f.password_field :password, autocomplete: "new-password"
-    .field
-      = f.label :password_confirmation,"パスワード（繰り返し)"
-      %br/
-      = f.password_field :password_confirmation, autocomplete: "new-password"
-    .actions
-      = f.submit "新規登録"
-  = render "devise/shared/links"
+.body
+  .header
+    .header__inner
+      = image_tag 'logo.png', alt: '', height: '', width: '', class: 'header__inner-logo'
+        
+
+
+  .container
+    %h2.container__top 新規会員登録
+
+    .container__form
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        = render "devise/shared/error_messages", resource: resource
+
+        .field.container__form__box
+          = f.label :nickname,"ニックネーム",class:"container__form__box-title"
+          %span.container__form__box-req 必須
+          %br/
+          = f.email_field :email, autofocus: true, autocomplete: "email",class:"container__form__box-inputbox",placeholder:"例)フリマ太郎"
+
+        .field.container__form__box
+          = f.label :email,"メールアドレス",class:"container__form__box-title"
+          %span.container__form__box-req 必須
+          %br/
+          = f.email_field :email, autofocus: true, autocomplete: "email",class:"container__form__box-inputbox",placeholder:"PC・携帯どちらでも可"
+
+        .field.container__form__box
+          = f.label :password,"パスワード",class:"container__form__box-title"
+          - if @minimum_password_length
+            %em
+              (#{@minimum_password_length} 文字以上)
+          %span.container__form__box-req 必須
+          %br/
+          = f.password_field :password, autocomplete: "new-password",class:"container__form__box-inputbox",placeholder:"○文字以上の英数字"
+          %p ※ 英字と数字の両方を含めて設定してください
+          %input#pass-checkbox{type: "checkbox"}
+          %label{for: "pass-checkbox"}パスワードを表示する
+
+        %h3 本人確認
+        %p 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+
+
+        .field.container__form__box.clearfix
+          = f.label :nickname,"お名前（全角）",class:"container__form__box-title"
+          %span.container__form__box-req 必須
+          %br/
+          = f.email_field :email, autofocus: true, autocomplete: "email",class:"container__form__box-inputbox-firstname",placeholder:"例)佐藤"
+          = f.email_field :email, autofocus: true, autocomplete: "email",class:"container__form__box-inputbox-lastname",placeholder:"例)太郎"
+
+        .field.container__form__box.clearfix
+          = f.label :nickname,"お名前（カナ）",class:"container__form__box-title"
+          %span.container__form__box-req 必須
+          %br/
+          = f.email_field :email, autofocus: true, autocomplete: "email",class:"container__form__box-inputbox-firstname",placeholder:"例)サトウ"
+          = f.email_field :email, autofocus: true, autocomplete: "email",class:"container__form__box-inputbox-lastname",placeholder:"例)タロウ"
+
+        .field.container__form__box.clearfix
+          = f.label :nickname,"生年月日",class:"container__form__box-title"
+          %span.container__form__box-req 必須
+          %br/
+          = f.email_field :email, autofocus: true, autocomplete: "email",class:"container__form__box-inputbox-birthday",placeholder:"--"
+          %span.container__form__box-birthday 年
+          = f.email_field :email, autofocus: true, autocomplete: "email",class:"container__form__box-inputbox-birthday",placeholder:"--"
+          %span.container__form__box-birthday 月
+          = f.email_field :email, autofocus: true, autocomplete: "email",class:"container__form__box-inputbox-birthday",placeholder:"--"
+          %span.container__form__box-birthday 日
+
+        .actions.container__form__box
+          = f.submit "新規登録",class:"container__form__box__submit"
+
+      = render "devise/shared/links"
+
+  .footer
