@@ -27,12 +27,13 @@
 .main
   .main__mv
     .main__mv__content
-      .main__mv__content-ttl 人生を変えるフリマアプリ
-      .main__mv__content-txt FURIMAはだれでもかんたんに出品・購入できる<br>フリマアプリです
+      %h2.main__mv__content-ttl <br>人生を変えるフリマアプリ
+      %p.main__mv__content-txt FURIMAはだれでもかんたんに出品・購入できる<br>フリマアプリです
       .main__mv__content-btn
-        .main__mv__content-btn__apple
-          -# = = image_tag '', alt: '', height: '', width: '', class: ''
-        .main__mv__content-btn__google
+        = link_to '#', class: "main__mv__content-btn__apple" do
+          = image_tag 'material/icon/AppStore.svg', class: 'AppStore-btn'
+        = link_to '#', class: "main__mv__content-btn__google" do
+          = image_tag 'material/icon/GooglePlay.png', class: 'GooglePlay-btn'
   .main__feature
     %h2.main__feature__ttl FURIMAが選ばれる3つの理由
     %ul.lists
