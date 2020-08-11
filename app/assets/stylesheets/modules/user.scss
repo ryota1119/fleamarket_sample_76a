@@ -53,6 +53,17 @@
         &__box {
             width: 350px;
             margin: 30px auto 0;
+            h3 {
+                font-weight: bold;
+                margin-bottom: 5px;
+            }
+            p {
+                color: #888;
+                font-size: 14px;
+            }
+            .pass-checkbox {
+                margin-top: 10px
+            }
             &-title {
                 margin-top: 30px;
                 font-size: 14px;
@@ -66,10 +77,16 @@
                 margin-left: 8px;
                 border-radius: 2px;
             }
-            &-birthday {
-                line-height: 50px;
+            .year,
+            .month,
+            .day {
+                height: 50px;
+                padding: 0 10px;
                 font-size: 14px;
-                margin: 0 2px;
+                margin: 8px 4px 0 8px;
+                color: #888;
+                border: 1px solid #ccc;
+                border-radius: 5px;
             }
             &__submit {
                 height: 50px;
