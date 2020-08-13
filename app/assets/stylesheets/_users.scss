@@ -1,3 +1,7 @@
+html {
+  background-color: whitesmoke;
+}
+
 .header {
   height: 100px;
   width: 100%;
@@ -34,6 +38,7 @@
         color: #333;
         a {
           text-decoration: none;
+          color: #4e5863;
         }
       }
       &__lists {
@@ -121,6 +126,7 @@
         text-align: center;
         line-height: 70px;
         background-color: #3ccace;
+        color: #4e5863;
       }
       &__lists {
         &__list {
@@ -132,6 +138,7 @@
           justify-content: space-between;
           padding: 0 10px;
           box-sizing: border-box;
+          color: #4e5863;
         }
       }
     }
@@ -146,6 +153,7 @@
         text-align: center;
         line-height: 70px;
         background-color: #3ccace;
+        color: #4e5863;
       }
       &__lists {
         &__list {
@@ -157,6 +165,7 @@
           justify-content: space-between;
           padding: 0 10px;
           box-sizing: border-box;
+          color: #4e5863;
         }
       }
     }
@@ -171,6 +180,7 @@
         text-align: center;
         line-height: 70px;
         background-color: #3ccace;
+        color: #4e5863;
       }
       &__lists {
         &__list {
@@ -182,6 +192,7 @@
           justify-content: space-between;
           padding: 0 10px;
           box-sizing: border-box;
+          color: #4e5863;
         }
       }
     }

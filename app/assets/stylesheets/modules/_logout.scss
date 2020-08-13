@@ -5,20 +5,20 @@
   background-color: whitesmoke;
   padding-top: 100px;
   &__inner {
-    height: 200px;
-    width: 500px;
+    height: 300px;
+    width: 800px;
     text-align: center;
     margin: 0 auto;
     background-color: white;
     &__btn {
-      background-color: turquoise;
+      background-color: #3ccace;
       color: white;
       font-size: 20px;
       width: 280px;
       height: 40px;
       text-decoration: none;
       padding: 10px 60px;
-      line-height: 200px;
+      line-height: 300px;
     }
   }
 }
