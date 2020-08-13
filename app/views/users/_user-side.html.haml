@@ -1,7 +1,7 @@
 .left-contents
   .page-nav
     .page-nav__title
-      マイページ
+      %a(href="/users/:id")マイページ
     %ul.page-nav__lists
       %li.page-nav__lists__list  
         %a(href="#")出品する
@@ -23,7 +23,7 @@
       設定
     %ul.setting__lists
       %li.setting__lists__list
-        %a(href="#")お支払い方法
+        %a(href="/users/:id/credit")お支払い方法
         %i.fas.fa-angle-right
       %li.setting__lists__list
         %a(href="/users/:id/logout")ログアウト
