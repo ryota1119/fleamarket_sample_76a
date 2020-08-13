@@ -2,40 +2,44 @@
   .header__title
     = image_tag 'logo.png', alt: 'logo', height: '70px', width: '', class: 'header__title__logo'
 .mypage
-  .left-contents
-    .mypage-nav
-      .mypage-nav__title
-        マイページ
-      %ul.mypage-nav__lists
-        %li.mypage-nav__lists__list  
-          %a(href="#")出品する
-        %li.mypage-nav__lists__list
-          %a(href="#")出品した商品
-        %li.mypage-nav__lists__list
-          %a(href="#")購入した商品
-        %li.mypage-nav__lists__list
-          %a(href="#")お問い合わせ
-        %li.mypage-nav__lists__list
-          %a(href="#")お知らせ
-    .setting
-      .setting__title
-        設定
-      %ul.setting__lists
-        %li.setting__lists__list
-          %a(href="#")お支払い方法
-        %li.setting__lists__list
-          %a(href="#")ログアウト
+  = render partial: 'user-side'
   .right-contents
-    .right-contents__user-info
-      .right-contents__user-info__image
-        = image_tag 'https://www.shoshinsha-design.com/wp-content/uploads/2018/07/user_icon.png', alt: 'アイコン', height: '', width: '', class: ''
-      .right-contents__user-info__name
-        ネーム
-      .right-contents__user-info__items
-        出品数
-    .right-contents__todo
-      Todoリスト
-    .right-contents__transactions
-      取引中の商品
-    .right-contents__Purchased
-      購入した商品
+    .user
+      .user__image
+        = image_tag 'ビジネスマン風のヒューマンアイコン素材.png', alt: 'アイコン', height: '80', width: '80', class: ''
+      .user__info
+        .user__info__name
+          ニックネーム
+        .user__info__items
+          出品数:3
+    .todo
+      .todo__title
+        Todoリスト
+      %ul.todo__lists
+        %li.todo__lists__list
+          〇〇日までに、発送
+          %i.fas.fa-angle-right
+        %li.todo__lists__list
+          〇〇日までに、入金
+          %i.fas.fa-angle-right
+    .transactions
+      .transactions__title
+        取引中
+      %ul.transactions__lists
+        %li.transactions__lists__list
+          レディース、Tシャツ（S）
+          %i.fas.fa-angle-right
+        %li.transactions__lists__list
+          レディース、バッグ
+          %i.fas.fa-angle-right
+    .purchased
+      .purchased__title
+        購入した商品
+      %ul.purchased__lists
+        %li.purchased__lists__list
+          レディース、Tシャツ（S）
+          %i.fas.fa-angle-right
+        %li.purchased__lists__list
+          レディース、バッグ
+          %i.fas.fa-angle-right
+
