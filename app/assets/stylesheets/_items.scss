@@ -25,8 +25,8 @@
       }
       &__right {
         margin-left: auto;
-        width: 1000px;
-        form {
+        width: 100%;
+        &__form {
           display: flex;
           width: 100%;
           margin-bottom: 5px;
@@ -41,16 +41,11 @@
             cursor: pointer;
             background-color: #3ccace;
             padding: 8px;
-            &__icon {
-              &__img {
-                width: 100%;
-                vertical-align: bottom;
-              }
-            }
           }
         }
       }
     }
+    
     &__nav {
       font-size: 14px;
       margin-bottom: 10px;

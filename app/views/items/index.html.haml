@@ -5,13 +5,10 @@
         = link_to "#", class: "header__icon" do
           = image_tag 'material/logo/logo.png', alt: 'ヘッダーロゴの画像', height: '40px', width: '140px', class: 'header__logo'
       .header__inner__upper__right
-        = form_tag do
-          .header__inner__upper__right__search-box
-            = text_field_tag :items, "キーワードから探す"
-          .header__inner__upper__right__search-btn
-            = submit_tag 
-            -# .header__inner__upper__right__search-btn__icon
-            -#   = image_tag 'material/icon/icon-search 1.png', class: 'header__inner__upper__right__search-btn__icon-img'
+        = form_tag '/', class: 'header__inner__upper__right__form' do
+          = text_field_tag :items,'キーワードから探す', class: 'header__inner__upper__right__form__search-box'
+          %button.header__inner__upper__right__form__search-btn
+            = image_tag 'material/icon/icon-search 1.png', class: 'header__inner__upper__right__search-btn__img', width: '20px'
     .header__inner__nav
       %ul.header__inner__nav__left
         %li.header__inner__nav__left__list
@@ -23,6 +20,7 @@
           = link_to "ログイン"
         %li.header__inner__nav__right__list
           = link_to "新規会員登録"
+          
 
 .main
   .main__mv
