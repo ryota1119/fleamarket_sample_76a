@@ -1,6 +1,16 @@
 .header
   .header__title
-    = image_tag 'logo.png', alt: 'logo', height: '70px', width: '', class: 'header__title__logo'
+    = image_tag 'logo/logo.png', alt: 'logo', height: '70px', width: '', class: 'header__title__logo'
 .mypage
   = render partial: 'user-side'
-  
+  .credit
+    .credit__title
+      .credit__title__name
+        クレジットカード入力画面
+    .main-form
+      .main-form__cardnumber
+        カード番号
+        必須
+      .main-form__cardnumber__input-form
+        %input(type="text")/
+

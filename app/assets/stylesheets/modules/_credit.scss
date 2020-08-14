@@ -1,0 +1,23 @@
+.credit {
+  float: right;
+  &__title {
+    height: 100px;
+    width: 100%;
+    margin-top: 10px;
+    &__name {
+      height: 80px;
+      width: 700px;
+      background-color: white;
+      font-size: 20px;
+      font-weight: bold;
+      color: #4e5863;
+      text-align: center;
+      line-height: 80px;
+    }
+  }
+  .main-form {
+    height: calc(100vh - 210px);
+    width: 100%;
+    background-color: white;
+  }
+}
