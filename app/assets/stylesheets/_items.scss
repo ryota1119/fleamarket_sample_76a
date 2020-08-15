@@ -215,7 +215,7 @@
     background-size: cover;
     display: flex;
     align-items: center;
-    &__innner {
+    &__inner {
       color: #fff;
       text-shadow: 0 0 5px rgba(0,0,0,0.4);
       max-width: 1040px;
@@ -230,6 +230,28 @@
         font-size: 18px;
         margin: 20px 0 30px;
         line-height: 1.5;
+      }
+      &__btn {
+        display: flex;
+        &-apple {
+          margin-right: 10px;
+          .a-btn {
+            width: 180px;
+          }
+        }
+        &-google {
+          width: 620px;
+          height: 79px;
+          position: relative;
+          .g-btn {
+            // width: 180px;
+            width: 206px;
+            height: 79px;
+            position: absolute;
+            // top: -13px;
+            
+          }
+        }
       }
     }
   }
@@ -410,5 +432,26 @@
   }
   p {
     font-size: 14px;
+  }
+}
+.purchaseBtn {
+  width: 90px;
+  height: 86px;
+  background-color: #3ccace;
+  text-align: center;
+  border-radius: 4%;
+  bottom: 32px;
+  right: 32px;
+  position: fixed;
+  padding: 15px;
+  .purchaseBtn__text {
+    color: #fff;
+    display: block;
+    font-size: 18px;
+    text-decoration: none;
+    margin-bottom: 5px;
+  }
+  .purchaseBtn__icon {
+    width: 60%;
   }
 }
