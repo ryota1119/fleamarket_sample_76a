@@ -115,20 +115,17 @@ body {
         &-btn {
           display: flex;
           margin: 24px 0 0 0;
-          &__apple {
-            margin-right: 10px;
+          .a-btn {
             height: 53px;
-            width: 180px;
-            .AppStore-btn {
-              width: 100%;
+            img {
               height:100%;
             }
           }
-          &__google { 
+          .g-btn { 
             width: 620px;
             height: 79px;
             position: relative;
-            .GooglePlay-btn {
+            img {
               width: 206px;
               height: 79px;
               position: absolute;
@@ -206,8 +203,7 @@ body {
             line-height: 1.5;
             margin: 16px 0 0;
           }
-        }
-        
+        }     
       }
     }
     &__middle {
@@ -235,23 +231,21 @@ body {
         }
         &__btn {
           display: flex;
-          &-apple {
-            margin-right: 10px;
-            .a-btn {
-              width: 180px;
+          .a-btn {
+            height: 53px;
+            img {
+              height: 100%;;
             }
           }
-          &-google {
+          .g-btn {
             width: 620px;
             height: 79px;
             position: relative;
-            .g-btn {
-              // width: 180px;
+            img {
               width: 206px;
               height: 79px;
               position: absolute;
-              // top: -13px;
-              
+              top: -13px;
             }
           }
         }
@@ -311,7 +305,6 @@ body {
             text-align: left;
           }
         }
-
       }
     }
     &__items{
@@ -390,6 +383,25 @@ body {
       }
       &__txt {
         font-size: 36px;
+      }
+      &__btn {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin: 20px auto 0;
+        .a-btn {
+          height: 53px;
+          margin: auto 0;
+          img {
+            height: 100%;;
+          }
+        }
+        .g-btn {
+          img {
+            width: 206px;
+            height: 79px;
+          }
+        }
       }
     }
   }
