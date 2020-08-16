@@ -11,8 +11,7 @@
         カード番号
         %span.credit__form__box-req
           必須
-        .credit__form__box__input
-          %input(type="text" placeholder="半角数字のみ")/
+        %input(type="text" placeholder="半角数字のみ" class="credit__form__box__input")/
         %ul.credit__form__box__brand-lists
           %li.credit__form__box__brand-lists__list
             = image_tag 'credit icon/iconfinder_visa-curved_38610.png', alt: 'visa', height: '30', width: '40', class: 'visa'
@@ -68,6 +67,5 @@
         セキュリティコード
         %span.credit__form__box-req
           必須
-        .credit__form__box__input
-          %input(type="text" placeholder="カード背面4桁もしくは3桁の番号")/
+        %input(type="text" placeholder="カード背面4桁もしくは3桁の番号" class="credit__form__box__input")/
       %input(type="submit" value="追加する" class="credit__form__submit-btn")/

@@ -29,19 +29,16 @@
       font-weight: bold;
       color: #4e5863;
       &__input {
-        input { 
-          height: 50px;
-          width: 100%;
-          padding: 10px 16px 8px;
-          margin-top: 8px;
-          border-radius: 5px;
-          border: 1px solid #ccc;
-          font-size: 16px;
-        }
+        height: 50px;
+        width: 100%;
+        padding: 10px 16px 8px;
+        margin-top: 8px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        font-size: 16px;
       }
       &__brand-lists {
         display: flex;
-        width: 100%;
         justify-content: center;
         &__list {
           margin: 10px 10px;
