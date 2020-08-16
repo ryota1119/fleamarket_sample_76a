@@ -1,23 +1,75 @@
+* {
+  box-sizing: border-box;
+}
+
 .credit {
   float: right;
-  &__title {
+  &__top {
     height: 100px;
+    width: 700px;
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #4e5863;
+    background-color: white;
+    text-align: center;
+    line-height: 100px;
+    box-sizing: border-box;
+  }
+  &__form  {
+    height: 100%;
     width: 100%;
     margin-top: 10px;
-    &__name {
+    padding: 40px 0;
+    background-color: white;
+    &__box {
+      width: 350px;
+      margin: 30px auto 0;
       font-size: 20px;
       font-weight: bold;
       color: #4e5863;
-      height: 80px;
-      width: 700px;
-      background-color: white;
-      text-align: center;
-      line-height: 80px;
+      &__input {
+        input { 
+          height: 50px;
+          width: 100%;
+          padding: 10px 16px 8px;
+          margin-top: 8px;
+          border-radius: 5px;
+          border: 1px solid #ccc;
+        }
+      }
+      &__select-form {
+        display: flex;
+        line-height: 60px;
+        &__select {
+          select {
+            height: 50px;
+            padding: 10px 16px 8px;
+            margin-top: 8px;  
+            border-radius: 5px;
+            border: 1px solid #ccc;
+          }
+        }
+        &__date {
+          margin: 0 5px;
+        }
+      }
     }
-  }
-  &__main {
-    height: calc(100vh - 210px);
-    width: 100%;
-    background-color: white;
+    &__box-req {
+      background-color: #35C0C3;
+      color: white;
+      border-radius: 2px;
+      padding: 2px 4px;
+      margin-left: 8px;
+    }
+    &__submit-btn {
+      height: 50px;
+      width: 350px;
+      background-color: #35C0C3;
+      color: #fff;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      margin: 50px 175px;
+    }
   }
 }
