@@ -6,7 +6,7 @@
           = image_tag 'material/logo/logo.png', alt: 'ヘッダーロゴの画像', height: '40px', width: '140px', class: 'header__logo'
       .header__inner__upper__right
         = form_tag '/', class: 'header__inner__upper__right__form' do
-          = text_field_tag :items,'キーワードから探す', class: 'header__inner__upper__right__form__search-box'
+          = text_field_tag :items, '', class: 'header__inner__upper__right__form__search-box', placeholder: 'キーワードから探す'
           %button.header__inner__upper__right__form__search-btn
             = image_tag 'material/icon/icon-search 1.png', class: 'header__inner__upper__right__search-btn__img', width: '20px'
     .header__inner__nav
