@@ -36,27 +36,29 @@ html {
         size: 15px;
         font-weight: bold;
         color: #333;
-        a {
-          text-decoration: none;
-          color: #4e5863;
-        }
       }
       &__lists {
+        list-style: none;
         &__list {
+          position: relative;
           height: 50px;
           width: 270px;
+          border-bottom: 1px solid;
           line-height: 50px;
           padding: 0 10px;
-          border-bottom: 1px solid;
-          display: flex;
-          justify-content: space-between;
-        }
-        a {
-          text-decoration: none;
-          color: #4e5863;
-        }
-        .fa-angle-right {
-          line-height: 50px;
+          font-weight: bold;
+          a {
+            display: block;
+            height: 100%;
+            text-decoration: none;
+            color: #4e5863;
+            .fas {
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+              right: 15px;
+            }
+          }
         }
       }
     }
@@ -69,23 +71,27 @@ html {
         color: #333;
       }
       &__lists {
+        list-style: none;
         &__list {
+          position: relative;
           height: 50px;
           width: 270px;
+          border-bottom: 1px solid;
           line-height: 50px;
           padding: 0 10px;
-          border-bottom: 1px solid;
-          display: flex;
-          justify-content: space-between;
-        }
-        a {
-          height: 50px;
-          width: 270px;
-          text-decoration: none;
-          color: #4e5863;
-        }
-        .fa-angle-right {
-          line-height: 50px;
+          font-weight: bold;
+          a {
+            display: block;
+            height: 100%;
+            text-decoration: none;
+            color: #4e5863;
+            .fas {
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+              right: 15px;
+            }
+          }
         }
       }
     }
@@ -106,8 +112,6 @@ html {
       &__info {
         display: flex;
         justify-content: center;
-        &__name {
-        }
         &__items {
           padding-left: 20px;
         }
