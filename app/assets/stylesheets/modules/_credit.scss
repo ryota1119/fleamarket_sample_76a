@@ -17,17 +17,17 @@
     box-sizing: border-box;
   }
   &__form  {
-    height: 100%;
-    width: 100%;
     margin-top: 10px;
     padding: 40px 0;
     background-color: white;
     &__box {
       width: 350px;
       margin: 30px auto 0;
-      font-size: 20px;
-      font-weight: bold;
-      color: #4e5863;
+      &__title {
+        font-size: 20px;
+        font-weight: bold;
+        color: #4e5863;
+      }
       &__input {
         height: 50px;
         width: 100%;
@@ -47,15 +47,14 @@
       &__select-form {
         display: flex;
         line-height: 60px;
-        &__select {
-          select {
-            height: 50px;
-            padding: 10px 16px 8px;
-            margin-top: 8px;  
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            font-size: 16px;
-          }
+        select {
+          height: 50px;
+          padding: 10px 16px 8px;
+          margin-top: 8px;  
+          border-radius: 5px;
+          border: 1px solid #ccc;
+          font-size: 16px;
+          color: #888;
         }
         &__date {
           margin: 0 5px;

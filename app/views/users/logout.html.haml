@@ -5,4 +5,5 @@
   = render partial: 'user-side'
   .logout-content
     .logout-content__inner
-      = link_to('ログアウト', destroy_user_session_path, method: :delete, class: 'logout-content__inner__btn')
+      .logout-content__inner__btn
+        = link_to('ログアウト', destroy_user_session_path, method: :delete, class: 'logout-btn')
