@@ -78,60 +78,64 @@
           = image_tag 'material/icon/icon-04.png'
         %h3.main__feature2__items__item__ttl 様々な支払いに対応
         %p.main__feature2__items__item__detail お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
-        
-  .main__items
-    %h2.main__items__ttl ピックアップカテゴリー
-    .main__items__box
-      %h3.main__items__box__txt 新規投稿商品
-      .main__items__box__lists
-        .main__items__box__lists__list
-          .main__items__box__lists__list__img
+  .main__pickup-container
+    %h2.main__pickup-container__ttl ピックアップカテゴリー
+    .main__pickup-container__box
+      %h3.main__pickup-container__box__txt 新規投稿商品
+      .main__pickup-container__box__lists
+        .main__pickup-container__box__lists__list
+          .main__pickup-container__box__lists__list__img
           = image_tag 'material/item1.png', height: '150px', width: '220px'
-          .main__items__box__lists__list__body
-            %h3.main__items__box__lists__list__body__name 白米
-            .main__items__box__lists__list__body__details 
+          .main__pickup-container__box__lists__list__body
+            %h3.main__pickup-container__box__lists__list__body__name 白米
+            .main__pickup-container__box__lists__list__body__details 
               %ul
                 %li 10000円
+                = icon('fas', 'star')
                 %li 1
               %p (税込み)
-        .main__items__box__lists__list
-          .main__items__box__lists__list__img
+        .main__pickup-container__box__lists__list
+          .main__pickup-container__box__lists__list__img
           = image_tag 'material/item2.png', height: '150px', width: '220px'
-          .main__items__box__lists__list__body
-            %h3.main__items__box__lists__list__body__name ピザ
-            .main__items__box__lists__list__body__details
+          .main__pickup-container__box__lists__list__body
+            %h3.main__pickup-container__box__lists__list__body__name ピザ
+            .main__pickup-container__box__lists__list__body__details
               %ul
                 %li 1000円
+                = icon('fas', 'star')
                 %li 0
               %p (税込み)
-        .main__items__box__lists__list
-          .main__items__box__lists__list__img
+        .main__pickup-container__box__lists__list
+          .main__pickup-container__box__lists__list__img
           = image_tag 'material/item3.png', height: '150px', width: '220px'
-          .main__items__box__lists__list__body
-            %h3.main__items__box__lists__list__body__name  生姜焼き
-            .main__items__box__lists__list__body__details
+          .main__pickup-container__box__lists__list__body
+            %h3.main__pickup-container__box__lists__list__body__name  生姜焼き
+            .main__pickup-container__box__lists__list__body__details
               %ul
                 %li 30000円
+                = icon('fas', 'star')
                 %li 0
               %p (税込み)
-        .main__items__box__lists__list
-          .main__items__box__lists__list__img
+        .main__pickup-container__box__lists__list
+          .main__pickup-container__box__lists__list__img
           = image_tag 'material/item4.png', height: '150px', width: '220px'
-          .main__items__box__lists__list__body
-            %h3.main__items__box__lists__list__body__name クリームコロッケ
-            .main__items__box__lists__list__body__details
+          .main__pickup-container__box__lists__list__body
+            %h3.main__pickup-container__box__lists__list__body__name クリームコロッケ
+            .main__pickup-container__box__lists__list__body__details
               %ul
                 %li 20000円
+                = icon('fas', 'star')
                 %li 0
               %p (税込み)
-        .main__items__box__lists__list
-          .main__items__box__lists__list__img
+        .main__pickup-container__box__lists__list
+          .main__pickup-container__box__lists__list__img
           = image_tag 'material/item5.png', height: '150px', width: '220px'
-          .main__items__box__lists__list__body
-            %h3.main__items__box__lists__list__body__name  ぎょうざ
-            .main__items__box__lists__list__body__details
+          .main__pickup-container__box__lists__list__body
+            %h3.main__pickup-container__box__lists__list__body__name  ぎょうざ
+            .main__pickup-container__box__lists__list__body__details
               %ul
                 %li 10000円
+                = icon('fas', 'star')
                 %li 1
               %p (税込み)
 .app-banner
@@ -143,14 +147,12 @@
         = image_tag 'material/icon/AppStore.svg'
       = link_to '#', class: "g-btn" do
         = image_tag 'material/icon/GooglePlay.png'
-
-
 .footer
   %ul.footer__inner
     %li.footer__inner__lists
       %h2.footer__inner__lists__ttl FURIMAについて
       %ul
-        %li 会社概要(運営会社)
+        %li 会社概要（運営会社）
         %li プライバシーポリシー
         %li FURIMA利用規約
         %li ポイントに関する特約
@@ -160,14 +162,14 @@
         %li カテゴリー一覧 
         %li ブランド一覧
     %li.footer__inner__lists 
-      %h2.footer__inner__lists__ttl ヘルプ&ガイド
+      %h2.footer__inner__lists__ttl ヘルプ＆ガイド
       %ul
         %li FURIMAガイド
         %li FURIMAロゴ利用ガイドライン
         %li お知らせ
   .footer__logo
     = image_tag 'material/logo/logo-white.png', height: '46px', width:'140px', class: "footer__logo__img"
-    %p &copy;FURIMA
+    %p &copy;  FURIMA
 = link_to "#" do
   .purchaseBtn
     %span.purchaseBtn__text 出品する
