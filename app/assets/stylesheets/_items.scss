@@ -22,6 +22,8 @@ body {
             .header__logo {
               width: 100%;
               display: block;
+              height: 40px;
+              width: 140px;
             }
           }
         }
@@ -43,6 +45,9 @@ body {
               cursor: pointer;
               background-color: #3ccace;
               padding: 8px;
+              &__img {
+                width: 20px;
+              }
             }
           }
         }
@@ -316,6 +321,7 @@ body {
         font-weight: bold;
       }
       &__box {
+        padding-bottom: 60px;
         &__txt {
           font-weight: bold;
           font-size: 24px;
@@ -328,17 +334,30 @@ body {
           display: flex;
           justify-content: space-around;
           &__list {
-            width: 220px;
             display: inline-block;
-            background-color: white;
+            background-color: #fff;
+            text-decoration: none;
             &__img {
+              width: 220px;
+              height: 150px;
               position: relative;
               overflow: hidden;
               margin: 0;
               z-index: auto
+              img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                width: 100%;
+                z-index: auto;
+                height: 150px;
+                object-fit: cover;
+              }
             }
             &__body {
-              background-color: white;
+              background-color: #fff;
               color: #333;
               padding: 16px;
               &__name {

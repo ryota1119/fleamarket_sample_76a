@@ -3,12 +3,12 @@
     .header__inner__upper
       %h1.header__inner__upper__left
         = link_to "#", class: "header__icon" do
-          = image_tag 'material/logo/logo.png', alt: 'ヘッダーロゴの画像', height: '40px', width: '140px', class: 'header__logo'
+          = image_tag 'material/logo/logo.png', class: 'header__logo'
       .header__inner__upper__right
         = form_tag '/', class: 'header__inner__upper__right__form' do
           = text_field_tag :items, '', class: 'header__inner__upper__right__form__search-box', placeholder: 'キーワードから探す'
           %button.header__inner__upper__right__form__search-btn
-            = image_tag 'material/icon/icon-search 1.png', class: 'header__inner__upper__right__search-btn__img', width: '20px'
+            = image_tag 'material/icon/icon-search 1.png', class: 'header__inner__upper__right__form__search-btn__img'
     .header__inner__nav
       %ul.header__inner__nav__left
         %li.header__inner__nav__left__list
@@ -83,9 +83,9 @@
     .main__pickup-container__box
       %h3.main__pickup-container__box__txt 新規投稿商品
       .main__pickup-container__box__lists
-        .main__pickup-container__box__lists__list
+        = link_to '#', class: "main__pickup-container__box__lists__list" do
           .main__pickup-container__box__lists__list__img
-          = image_tag 'material/item1.png', height: '150px', width: '220px'
+            = image_tag 'material/item1.png'
           .main__pickup-container__box__lists__list__body
             %h3.main__pickup-container__box__lists__list__body__name 白米
             .main__pickup-container__box__lists__list__body__details 
@@ -94,9 +94,9 @@
                 = icon('fas', 'star')
                 %li 1
               %p (税込み)
-        .main__pickup-container__box__lists__list
+        = link_to '#', class: "main__pickup-container__box__lists__list" do
           .main__pickup-container__box__lists__list__img
-          = image_tag 'material/item2.png', height: '150px', width: '220px'
+            = image_tag 'material/item2.png', height: '150px', width: '220px'
           .main__pickup-container__box__lists__list__body
             %h3.main__pickup-container__box__lists__list__body__name ピザ
             .main__pickup-container__box__lists__list__body__details
@@ -105,9 +105,9 @@
                 = icon('fas', 'star')
                 %li 0
               %p (税込み)
-        .main__pickup-container__box__lists__list
+        = link_to '#', class: "main__pickup-container__box__lists__list" do
           .main__pickup-container__box__lists__list__img
-          = image_tag 'material/item3.png', height: '150px', width: '220px'
+            = image_tag 'material/item3.png', height: '150px', width: '220px'
           .main__pickup-container__box__lists__list__body
             %h3.main__pickup-container__box__lists__list__body__name  生姜焼き
             .main__pickup-container__box__lists__list__body__details
@@ -116,9 +116,9 @@
                 = icon('fas', 'star')
                 %li 0
               %p (税込み)
-        .main__pickup-container__box__lists__list
+        = link_to '#', class: "main__pickup-container__box__lists__list" do
           .main__pickup-container__box__lists__list__img
-          = image_tag 'material/item4.png', height: '150px', width: '220px'
+            = image_tag 'material/item4.png', height: '150px', width: '220px'
           .main__pickup-container__box__lists__list__body
             %h3.main__pickup-container__box__lists__list__body__name クリームコロッケ
             .main__pickup-container__box__lists__list__body__details
@@ -127,9 +127,9 @@
                 = icon('fas', 'star')
                 %li 0
               %p (税込み)
-        .main__pickup-container__box__lists__list
+        = link_to '#', class: "main__pickup-container__box__lists__list" do
           .main__pickup-container__box__lists__list__img
-          = image_tag 'material/item5.png', height: '150px', width: '220px'
+            = image_tag 'material/item5.png', height: '150px', width: '220px'
           .main__pickup-container__box__lists__list__body
             %h3.main__pickup-container__box__lists__list__body__name  ぎょうざ
             .main__pickup-container__box__lists__list__body__details
@@ -147,7 +147,7 @@
         = image_tag 'material/icon/AppStore.svg'
       = link_to '#', class: "g-btn" do
         = image_tag 'material/icon/GooglePlay.png'
-.footer
+%footer.footer
   %ul.footer__inner
     %li.footer__inner__lists
       %h2.footer__inner__lists__ttl FURIMAについて
@@ -168,7 +168,7 @@
         %li FURIMAロゴ利用ガイドライン
         %li お知らせ
   .footer__logo
-    = image_tag 'material/logo/logo-white.png', height: '46px', width:'140px', class: "footer__logo__img"
+    = image_tag 'material/logo/logo-white.png', class: "footer__logo__img"
     %p &copy;  FURIMA
 = link_to "#" do
   .purchaseBtn
