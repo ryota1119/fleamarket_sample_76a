@@ -36,15 +36,13 @@ Things you may want to cover:
 |:-----|:---|:-----:|
 |nickname|string|null: false|
 |email|string|null: false, unipue: true|
-|password|string|null: false, unipue: true|
-|password_conform|string|null: false|
 |first_name|string|null: false|
 |last_name|string|null: false|
 |first_name|string|null: false|
 |last_name_kana|string|null: false|
 |first_name_kana|string|null: false|
 |last_name_kana|string|null: false|
-|birthday|data|null: false|
+|birthday|date|null: false|
 ### Association
 - has_many :items, dependent:destroy
 - has_many :chats, dependent:destroy
@@ -68,7 +66,7 @@ Things you may want to cover:
 |shipping_date|integer|null: false (enum)|
 |price|integer|null: false|
 |seller_id|references|null: false, foreign_key: true|
-|buyer_id_id|references|null: false, foreign_key: true|
+|buyer_id|references|null: false, foreign_key: true|
 |category_id|references|null: false, foreign_key: true|
 ### Association
 - has_many :images, dependent:destroy
