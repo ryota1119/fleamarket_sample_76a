@@ -4,34 +4,34 @@
       マイページ
     %ul.page-nav__lists
       %li.page-nav__lists__list  
-        %a(href="#")
+        = link_to "#" do
           出品する
-          %i.fas.fa-angle-right
+          = icon("fas", "angle-right")
       %li.page-nav__lists__list
-        %a(href="#")
+        = link_to "#" do
           出品した商品
-          %i.fas.fa-angle-right
+          = icon("fas", "angle-right")
       %li.page-nav__lists__list
-        %a(href="#")
+        = link_to "#" do
           購入した商品
-          %i.fas.fa-angle-right
+          = icon("fas", "angle-right")
       %li.page-nav__lists__list
-        %a(href="#")
+        = link_to "#" do
           お問い合わせ
-          %i.fas.fa-angle-right
+          = icon("fas", "angle-right")
       %li.page-nav__lists__list
-        %a(href="#")
+        = link_to "#" do
           お知らせ
-          %i.fas.fa-angle-right
+          = icon("fas", "angle-right")
   .setting
     .setting__title
       設定
     %ul.setting__lists
       %li.setting__lists__list
-        %a(href="/users/:id/credit")
+        = link_to credit_user_path do
           お支払い方法
-          %i.fas.fa-angle-right
+          = icon("fas", "angle-right")
       %li.setting__lists__list
-        %a(href="/users/:id/logout")
+        = link_to logout_user_path do
           ログアウト
-          %i.fas.fa-angle-right
+          = icon("fas", "angle-right")
