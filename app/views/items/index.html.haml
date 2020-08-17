@@ -1,25 +1,6 @@
 %header.header
-  .header__inner
-    .header__inner__upper
-      %h1.header__inner__upper__left
-        = link_to "#", class: "header__icon" do
-          = image_tag 'material/logo/logo.png', class: 'header__logo'
-      .header__inner__upper__right
-        = form_tag '/', class: 'header__inner__upper__right__form' do
-          = text_field_tag :items, '', class: 'header__inner__upper__right__form__search-box', placeholder: 'キーワードから探す'
-          %button.header__inner__upper__right__form__search-btn
-            = image_tag 'material/icon/icon-search 1.png', class: 'header__inner__upper__right__form__search-btn__img'
-    .header__inner__nav
-      %ul.header__inner__nav__left
-        %li.header__inner__nav__left__list
-          = link_to "カテゴリー"
-        %li.header__inner__nav__left__list
-          = link_to "ブランド"
-      %ul.header__inner__nav__right
-        %li.header__inner__nav__right__list
-          = link_to "ログイン"
-        %li.header__inner__nav__right__list
-          = link_to "新規会員登録"
+  = render "header"
+
 .main
   .main__mv
     .main__mv__content
@@ -138,39 +119,14 @@
                 = icon('fas', 'star')
                 %li 1
               %p (税込み)
+
 .app-banner
-  .app-banner__inner
-    %h2.app-banner__inner__ttl だれでもかんたん、人生を変えるフリマアプリ
-    %p.app-banner__inner__txt 今すぐ無料ダウンロード！
-    .app-banner__inner__btn
-      = link_to '#', class: "a-btn" do
-        = image_tag 'material/icon/AppStore.svg'
-      = link_to '#', class: "g-btn" do
-        = image_tag 'material/icon/GooglePlay.png'
+  = render "app-banner"
+
 %footer.footer
-  %ul.footer__inner
-    %li.footer__inner__lists
-      %h2.footer__inner__lists__ttl FURIMAについて
-      %ul
-        %li 会社概要（運営会社）
-        %li プライバシーポリシー
-        %li FURIMA利用規約
-        %li ポイントに関する特約
-    %li.footer__inner__lists
-      %h2.footer__inner__lists__ttl FURIMAを見る
-      %ul
-        %li カテゴリー一覧 
-        %li ブランド一覧
-    %li.footer__inner__lists 
-      %h2.footer__inner__lists__ttl ヘルプ＆ガイド
-      %ul
-        %li FURIMAガイド
-        %li FURIMAロゴ利用ガイドライン
-        %li お知らせ
-  .footer__logo
-    = image_tag 'material/logo/logo-white.png', class: "footer__logo__img"
-    %p &copy;  FURIMA
-= link_to "#" do
-  .purchaseBtn
-    %span.purchaseBtn__text 出品する
-    = image_tag 'material/icon/icon_camera.png', class: 'purchaseBtn__icon'
+  = render "footer"
+
+= link_to "#", class: 'purchaseBtn' do
+  %span.purchaseBtn__text 出品する
+  = image_tag 'material/icon/icon_camera.png', class: 'purchaseBtn__icon'
+  
