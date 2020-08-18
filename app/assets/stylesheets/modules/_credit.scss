@@ -27,6 +27,14 @@
         font-size: 20px;
         font-weight: bold;
         color: #4e5863;
+        &__req {
+          background-color: red;
+          color: white;
+          font-size: 18px;
+          border-radius: 2px;
+          padding: 2px 4px;
+          margin-left: 8px;
+        }
       }
       &__input {
         height: 50px;
@@ -44,29 +52,18 @@
           margin: 10px 10px;
         }
       }
-      &__select-form {
-        display: flex;
-        line-height: 60px;
-        select {
-          height: 50px;
-          padding: 10px 16px 8px;
-          margin-top: 8px;  
-          border-radius: 5px;
-          border: 1px solid #ccc;
-          font-size: 16px;
-          color: #888;
-        }
-        &__date {
-          margin: 0 5px;
-        }
+      &__select {
+        height: 50px;
+        padding: 10px 16px 8px;
+        margin-top: 8px;  
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+        color: #888;
       }
-    }
-    &__box-req {
-      background-color: red;
-      color: white;
-      border-radius: 2px;
-      padding: 2px 4px;
-      margin-left: 8px;
+      &__date {
+        margin: 0 5px;
+      }
     }
     &__submit-btn {
       height: 50px;
