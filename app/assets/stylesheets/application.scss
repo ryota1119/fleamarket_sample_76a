@@ -1,6 +1,10 @@
 @import 'font-awesome-sprockets';
 @import "font-awesome";
 @import "reset";
+@import "modules/reset";
 @import "items";
 @import "modules/cssreset";
+@import "modules/logout";
+@import "modules/credit";
+@import "users";
 @import "modules/user";

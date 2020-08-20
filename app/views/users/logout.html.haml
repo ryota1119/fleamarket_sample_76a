@@ -1,0 +1,9 @@
+.header
+  .header__title
+    = image_tag 'logo/logo.png', alt: 'logo', height: '70px', width: '', class: 'header__title__logo'
+.mypage
+  = render partial: 'user-side'
+  .logout-content
+    .logout-content__inner
+      .logout-content__inner__btn
+        = link_to('ログアウト', destroy_user_session_path, method: :delete, class: 'logout-btn')
