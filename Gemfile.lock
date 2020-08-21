@@ -280,7 +280,6 @@ DEPENDENCIES
   capybara (>= 2.15)
   chromedriver-helper
   coffee-rails (~> 4.2)
-  font-awesome-sass (~> 5.4.1)
   devise
   font-awesome-sass
   haml-rails

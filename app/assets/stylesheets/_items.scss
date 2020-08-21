@@ -8,6 +8,7 @@ body {
       min-height: 82px;
       margin: 0 auto;
       padding: 15px 0 0;
+      background-color: #fff;
       &__upper {
         position: relative;
         display: flex;
@@ -468,7 +469,7 @@ body {
     }
   }
   .purchaseBtn {
-    width: 90px;
+    width: 120px;
     height: 86px;
     background-color: #3ccace;
     text-align: center;
