@@ -2,13 +2,13 @@ body {
   font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
   .header {
     padding: 0 60px;
+    background-color: #fff;
     &__inner {
       max-width: 1040px;
       width: 100%;
       min-height: 82px;
       margin: 0 auto;
       padding: 15px 0 0;
-      background-color: #fff;
       &__upper {
         position: relative;
         display: flex;
@@ -24,7 +24,6 @@ body {
               width: 100%;
               display: block;
               height: 40px;
-              width: 140px;
             }
           }
         }
@@ -174,7 +173,7 @@ body {
           align-items: center;
           .list-img {
             position: relative;
-            margin-bottom: 20px;;
+            margin-bottom: 20px;
             .number {
               display: inline-block;
               position: absolute;
@@ -186,7 +185,7 @@ body {
               margin: 0 5px 0 0;
               padding: 10px 20px;
               background-color: #3ccace;
-              color: #fff;;
+              color: #fff;
             }
             .list-pict {
               width: 100%;
@@ -238,7 +237,7 @@ body {
           .a-btn {
             height: 53px;
             img {
-              height: 100%;;
+              height: 100%;
             }
           }
           .g-btn {
