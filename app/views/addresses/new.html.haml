@@ -11,30 +11,12 @@
       = form_tag do
         .address__form__box
           %label.address__form__box__title
-            お名前（漢字）
-            %span.address__form__box__title__req
-              必須
-          %br/
-          = text_field_tag "first-name", "", class: "address__form__box__input", placeholder: "例）山田" , type: "text", id: "first-name"
-          %br/
-          = text_field_tag "last-name", "", class: "address__form__box__input", placeholder: "例）太郎" , type: "text", id: "last-name"
-          %br/
-          %label.address__form__box__title
-            お名前（カナ）
-            %span.address__form__box__title__req
-              必須
-          %br/
-          = text_field_tag "first-name-kana", "", class: "address__form__box__input", placeholder: "例）ヤマダ" , type: "text", id: "first-name-kana"
-          %br/
-          = text_field_tag "last-name-kana", "", class: "address__form__box__input", placeholder: "例）タロウ" , type: "text", id: "last-name-kana"
-          %br/
-          %label.address__form__box__title
             郵便番号
             %span.address__form__box__title__req
               必須
           %br/
           = text_field_tag "postal-code", "", class: "address__form__box__input", placeholder: "例）123-456" , type: "text", id: "postal-code"
-          %br/
+        .address__form__box
           %label.address__form__box__title
             都道府県
             %span.address__form__box__title__req
@@ -89,29 +71,31 @@
             %option{ value: "45"} 宮崎県
             %option{ value: "46"} 鹿児島県
             %option{ value: "47"} 沖縄県
-          %br/
+        .address__form__box
           %label.address__form__box__title
             市区町村
             %span.address__form__box__title__req
               必須
           %br/
           = text_field_tag "municipalities", "", class: "address__form__box__input", placeholder: "例）渋谷区" , type: "text", id: "municipalities"
-          %br/
+        .address__form__box
           %label.address__form__box__title
             番地
             %span.address__form__box__title__req
               必須
           %br/
           = text_field_tag "block_number", "", class: "address__form__box__input", placeholder: "例）xxx-ooo" , type: "text", id: "block_number"
-          %br/
+        .address__form__box
           %label.address__form__box__title
             建物名
           %br/
-          = text_field_tag "building_name", "", class: "address__form__box__input", placeholder: "例）xxx-ooo" , type: "text", id: "building_name"
-          %br/
+          = text_field_tag "building_name", "", class: "address__form__box__input", type: "text", id: "building_name"
+        .address__form__box
           %label.address__form__box__title
             電話番号
             %span.address__form__box__title__req
               必須
           %br/
-          = text_field_tag "phone_number", "", class: "address__form__box__input", placeholder: "例）xxx-ooo" , type: "text", id: "phone_number"
+          = text_field_tag "phone_number", "", class: "address__form__box__input", placeholder: "例）012-345-6789" , type: "text", id: "phone_number"
+        .address__form__submit
+          = submit_tag "登録する", id: "token_submit", class: "address__form__submit__btn"
