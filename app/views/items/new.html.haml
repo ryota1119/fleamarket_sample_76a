@@ -1,71 +1,98 @@
 = render partial: 'header'
 
-.new-container
-
-  出品画像
-  = render partial:'req' 
-  <br>
-  最大１０枚までアップロードできます
-  <br>
-
-  商品名
-  = render partial:'req' 
-  <br>
-
-  商品の説明
-  = render partial:'req' 
-  <br>
-
-  商品の詳細
-  <br>
-
-  カテゴリー
-  = render partial:'req' 
-  <br>
-
-  ブランド
-  %span 任意
-  <br>
-
-  配送について
-  <br>
-
-  配送料の負担
-  = render partial:'req' 
-  <br>
-
-  発送元の地域
-  = render partial:'req' 
-  <br>
-
-  発送までの日数
-  = render partial:'req' 
-  <br>
-
-  価格（¥300〜9,999,999）
-  <br>
-
-  販売価格
-  = render partial:'req' 
-  <br>
-  販売手数料（10%）
-  <br>
-  販売利益
-  <br>
-  出品する
-  <br>
-  戻る
-  <br>
-  禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
-  
+.new-wrapper
+  = form_with model: @item, local: true do |form|
+    .form-container
+      .new-content
+        = form.label :name,"出品画像", class: "new-content-title"
+        = render partial:'req' 
+        <br>
+        %p.new-content-max-images 最大１０枚までアップロードできます
+        = form.text_field :name, placeholder: "写真投稿してください", class: "new-content-form-area"
+        <br>
 
 
-  
-  
+    .form-container
+      .new-content
+        = form.label :name,"商品名", class: "new-content-title"
+        = render partial:'req' 
+        <br>
+        = form.text_field :name, placeholder: "商品名を入力してください", class: "new-content-form"
+        <br>
+
+      .new-content
+        = form.label :name,"商品の説明", class: "new-content-title"
+        = render partial:'req' 
+        <br>
+        = form.text_area :description, placeholder: "説明", class: "new-content-form"
+        <br>
 
 
+    .form-container
+      %h2.form-container-title 商品の詳細
+      .new-content
+        = form.label :name,"カテゴリ", class: "new-content-title"
+        = render partial:'req' 
+        <br>
+        = form.text_field :brand, placeholder: "カテゴリ", class: "new-content-form"
+        <br>
+
+      .new-content
+        = form.label :name,"ブランド", class: "new-content-title"
+        任意
+        <br>
+        = form.text_field :brand, placeholder: "ブランド", class: "new-content-form"
+        <br>
+
+      .new-content
+        = form.label :name,"状態", class: "new-content-title"
+        = render partial:'req' 
+        <br>
+        = form.select :condition, {状態: "状態", 新品: "新品", ほぼ新品: "ほぼ新品", やや傷あり: "やや傷あり", 傷あり: "傷あり"}
+        <br>
 
 
+    .form-container
+      %h2.form-container-title 配送について
+      .new-content
+        = form.label :name,"配送料の負担", class: "new-content-title"
+        = render partial:'req' 
+        <br>
+        = form.select :shipping_costs, {配送料の負担: "配送料の負担", 出品者: "出品者", 購入者: "購入者"}, class: "new-content-form"
+        <br>
 
+      .new-content
+        = form.label :name,"発送元の地域", class: "new-content-title"
+        = render partial:'req' 
+        <br>
+        = form.select :shipping_from, Item.shipping_froms.keys, class: "new-content-form"
+        <br>
+
+      .new-content
+        = form.label :name,"発送までの日数", class: "new-content-title"
+        = render partial:'req' 
+        <br>
+        = form.select :shipping_date, { 選択してください: "0",１−２日で発送: "1", ２−３日で発送: "2", ４−７日で発送: "3"}, class: "new-content-form"
+        <br>
+
+
+    .form-container
+      .new-content
+        = form.label :name,"価格（¥300〜9,999,999）", class: "new-content-title"
+        = render partial:'req' 
+        <br>
+        = form.text_field :price, placeholder: "値段", class: "new-content-form"
+        <br>
+        販売手数料（10%）
+        <br>
+        販売利益
+        <br>
+
+    = form.submit "出品する",class: "new-submit"
+    <br>
+    = link_to "戻る",'#',class:"return" 
+    <br>
+    
+    禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
 
 = render partial: 'footer'

@@ -494,13 +494,11 @@ body {
 ↑↑↑ index   /   new ↓↓↓
 ------------------------------*/
 
-.new-container {
-    height: 800px;
+.new-wrapper {
     width: 700px;
     margin: 0 auto;
     margin-bottom: 50px;
     background-color: #fff;
-    border-radius: 10px;
 }
 
 .req {
@@ -511,4 +509,57 @@ body {
     padding: 2px 4px;
     margin-left: 8px;
     border-radius: 2px;
+}
+
+.form-container {
+    padding: 40px;
+    border-top: 1px solid #efefef;
+}
+
+.new-content {
+    &-title {
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.4em;
+    }
+    &-max-images {
+        margin-top: 16px;
+        font-size: 14px;
+        line-height: 1.4em;
+    }
+    &-form {
+        height: 50px;
+        width: 100%;
+        margin-top: 10px;
+    }
+    &-form-area {
+        height: 150px;
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+
+.new-submit {
+    height: 50px;
+    width: 360px;
+    margin: 0 auto;
+    background-color: #35C0C3;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 5px;
+    border: #fff;
+    cursor: pointer;
+}
+
+.new-submit:hover {
+    opacity: 0.7;
+}
+
+.return {
+    text-decoration: none;
+}
+
+.return:hover {
+    opacity: 0.5;
+    text-decoration: underline;
 }
