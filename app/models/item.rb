@@ -2,7 +2,6 @@ class Item < ApplicationRecord
   with_options presence: true do
     validates :name
     validates :description
-    validates :brand
     validates :condition
     validates :status
     validates :shipping_costs
