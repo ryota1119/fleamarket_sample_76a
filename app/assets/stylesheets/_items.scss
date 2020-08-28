@@ -91,7 +91,7 @@ body {
   .main {
     &__mv {
       height: 560px;
-      background-image: url("material/pict/bg-mainVisual-pict_pc.jpg");
+      background-image: image-url("material/pict/bg-mainVisual-pict_pc.jpg");
       background-size: cover;
       background-repeat: no-repeat;
       background-position: top center;
@@ -210,7 +210,7 @@ body {
       }
     }
     &__middle {
-      background-image: url("material/pict/bg-topMiddleDl-pict.jpg");
+      background-image: image-url("material/pict/bg-topMiddleDl-pict.jpg");
       background-position: bottom right;
       height: 400px;
       background-size: cover;
@@ -387,7 +387,7 @@ body {
     }
   }
   .app-banner {
-    background-image: url("material/pict/bg-appBanner-pict.jpg");
+    background-image: image-url("material/pict/bg-appBanner-pict.jpg");
     padding: 100px 40px;
     position: relative;
     background-size: cover;
@@ -469,7 +469,6 @@ body {
   }
   .purchaseBtn {
     width: 120px;
-    height: 86px;
     background-color: #3ccace;
     text-align: center;
     border-radius: 4%;
