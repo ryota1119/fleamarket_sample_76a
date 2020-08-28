@@ -1,11 +1,16 @@
 .sell-items__top
   .sell-items__top__container
+    -# = form_with(model: [@item, @image], local: true) do |form|
+    -#   = form.file_field :image, placeholder: "商品画像"
+
     = form_with(model: @item, local: true) do |form|
       %ul
         %li.sell-items__top__container__list
           = form.text_field :name, placeholder: "商品名"
         %li.sell-items__top__container__list
-          = form.image, placeholder: "商品画像"
+          = form.fields_for :images do |image|
+            商品画像
+            = image.file_field :image
         %li.sell-items__top__container__list
           = form.text_area :description, placeholder: "説明文", rows: "10"
         %li.sell-items__top__container__list
