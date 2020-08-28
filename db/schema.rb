@@ -22,10 +22,8 @@ ActiveRecord::Schema.define(version: 2020_08_03_145239) do
     t.integer "shipping_from", null: false
     t.integer "shipping_date", null: false
     t.integer "price", null: false
-    t.bigint "users_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["users_id"], name: "index_items_on_users_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -47,5 +45,4 @@ ActiveRecord::Schema.define(version: 2020_08_03_145239) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "items", "users", column: "users_id"
 end

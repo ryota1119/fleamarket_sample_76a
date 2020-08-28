@@ -7,20 +7,18 @@
         %li.sell-items__top__container__list
           = form.text_area :description, placeholder: "説明文", rows: "10"
         %li.sell-items__top__container__list
-          = form.text_field :name, placeholder: "ブランド"
+          = form.text_field :brand, placeholder: "ブランド"
         %li.sell-items__top__container__list
-          = form.text_field :name, placeholder: "状態"
+          = form.text_field :condition, placeholder: "状態"
         %li.sell-items__top__container__list
-          = form.text_field :name, placeholder: "ステータス"
+          = form.text_field :status, placeholder: "ステータス"
         %li.sell-items__top__container__list
-          = form.text_field :name, placeholder: "送料"
+          = form.text_field :shipping_costs, placeholder: "送料"
         %li.sell-items__top__container__list
-          = form.text_field :name, placeholder: "発送元"
+          = form.text_field :shipping_from, placeholder: "発送元"
         %li.sell-items__top__container__list
-          = form.text_field :name, placeholder: "発送日"
+          = form.text_field :shipping_date, placeholder: "発送日"
         %li.sell-items__top__container__list
-          = form.text_field :name, placeholder: "価格"
-        %li.sell-items__top__container__list
-          = form.text_field :name, placeholder: "出品者"
+          = form.text_field :price, placeholder: "価格"
         %li.sell-items__top__container__list
           = form.submit "SEND" 
