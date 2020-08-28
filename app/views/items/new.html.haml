@@ -1,0 +1,26 @@
+.sell-items__top
+  .sell-items__top__container
+    = form_with(model: @item, local: true) do |form|
+      %ul
+        %li.sell-items__top__container__list
+          = form.text_field :name, placeholder: "商品名"
+        %li.sell-items__top__container__list
+          = form.text_area :description, placeholder: "説明文", rows: "10"
+        %li.sell-items__top__container__list
+          = form.text_field :name, placeholder: "ブランド"
+        %li.sell-items__top__container__list
+          = form.text_field :name, placeholder: "状態"
+        %li.sell-items__top__container__list
+          = form.text_field :name, placeholder: "ステータス"
+        %li.sell-items__top__container__list
+          = form.text_field :name, placeholder: "送料"
+        %li.sell-items__top__container__list
+          = form.text_field :name, placeholder: "発送元"
+        %li.sell-items__top__container__list
+          = form.text_field :name, placeholder: "発送日"
+        %li.sell-items__top__container__list
+          = form.text_field :name, placeholder: "価格"
+        %li.sell-items__top__container__list
+          = form.text_field :name, placeholder: "出品者"
+        %li.sell-items__top__container__list
+          = form.submit "SEND" 
