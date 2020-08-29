@@ -1,5 +1,5 @@
 class AddImageIdToItems < ActiveRecord::Migration[5.2]
   def change
-    add_column :items, :image_id, :integer
+    add_reference :items, :image, foreign_key: true
   end
 end
