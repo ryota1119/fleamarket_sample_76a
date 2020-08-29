@@ -1,31 +1,28 @@
 .sell-items__top
   .sell-items__top__container
-    -# = form_with(model: [@item, @image], local: true) do |form|
-    -#   = form.file_field :image, placeholder: "商品画像"
-
-    = form_with(model: @item, local: true) do |form|
+    = form_with(model: @item, local: true) do |f|
       %ul
         %li.sell-items__top__container__list
-          = form.text_field :name, placeholder: "商品名"
+          = f.text_field :name, placeholder: "商品名"
         %li.sell-items__top__container__list
-          = form.fields_for :images do |image|
+          = f.fields_for :images do |i|
             商品画像
-            = image.file_field :image
+            = i.file_field :src
         %li.sell-items__top__container__list
-          = form.text_area :description, placeholder: "説明文", rows: "10"
+          = f.text_area :description, placeholder: "説明文", rows: "10"
         %li.sell-items__top__container__list
-          = form.text_field :brand, placeholder: "ブランド"
+          = f.text_field :brand, placeholder: "ブランド"
         %li.sell-items__top__container__list
-          = form.text_field :condition, placeholder: "状態"
+          = f.text_field :condition, placeholder: "状態"
         %li.sell-items__top__container__list
-          = form.text_field :status, placeholder: "ステータス"
+          = f.text_field :status, placeholder: "ステータス"
         %li.sell-items__top__container__list
-          = form.text_field :shipping_costs, placeholder: "送料"
+          = f.text_field :shipping_costs, placeholder: "送料"
         %li.sell-items__top__container__list
-          = form.text_field :shipping_from, placeholder: "発送元"
+          = f.text_field :shipping_from, placeholder: "発送元"
         %li.sell-items__top__container__list
-          = form.text_field :shipping_date, placeholder: "発送日"
+          = f.text_field :shipping_date, placeholder: "発送日"
         %li.sell-items__top__container__list
-          = form.text_field :price, placeholder: "価格"
+          = f.text_field :price, placeholder: "価格"
         %li.sell-items__top__container__list
-          = form.submit "SEND" 
+          = f.submit "SEND" 
