@@ -514,10 +514,18 @@ body {
 .form-container {
     padding: 40px;
     border-top: 1px solid #efefef;
+    &-title {
+        color: #8E8E8E;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.4em;
+        margin-bottom: 24px;
+    }
 }
 
 .new-content {
     &-title {
+        margin-top: 10px;
         font-size: 14px;
         font-weight: 600;
         line-height: 1.4em;
@@ -530,12 +538,20 @@ body {
     &-form {
         height: 50px;
         width: 100%;
+        padding: 0 16px;
         margin-top: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
     }
     &-form-area {
         height: 150px;
         width: 100%;
+        padding: 13px 16px;
         margin-top: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
     }
 }
 
