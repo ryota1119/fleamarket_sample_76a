@@ -78,22 +78,23 @@
 
     .form-container
       .new-content
-        = form.label :price,"価格（¥300〜9,999,999）", class: "new-content-title"
-        <br>
-        = form.label :price,"販売価格", class: "new-content-title"
-        = render partial:'req' 
-        = form.text_field :price, placeholder: "値段", class: "new-content-form-price"
-        <br>
-        販売手数料（10%）
-        <br>
-        販売利益
-        <br>
+        %h2.form-container-title  価格（¥300〜9,999,999）
+        .price-box
+          .box
+            = form.label :price,"販売価格", class: "new-content-title"
+            = render partial:'req' 
+          = form.text_field :price, placeholder: "値段", class: "new-content-form-price"
+      .price-box
+        %p 販売手数料（10%）
+        %p.right-content ¥1000
+        
+    .form-container
+      .price-box
+        %p 販売利益
+        %p.right-content ¥900
 
-    = form.submit "出品する",class: "new-submit"
-    <br>
-    = link_to "戻る",'#',class:"return" 
-    <br>
-    
-    禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
+    .form-container
+      = form.submit "出品する",class: "new-submit" 
+      %p.precautions 禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
 
 = render partial: 'footer'
