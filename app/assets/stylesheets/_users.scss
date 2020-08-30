@@ -66,21 +66,7 @@ html {
   background-color: whitesmoke;
 }
 
-.header {
-  height: 100px;
-  width: 100%;
-  position: relative;
-  &__title {
-    left: 50%;
-    position: absolute;
-    top: 50%;
-    &__logo {
-      transform: translate(-50%,-50%);
-    }
-  }
-}
 .mypage {
-  height: 100vh;
   width: 1200px;
   padding-top: 30px;
   margin: 0 auto;
