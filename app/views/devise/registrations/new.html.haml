@@ -1,10 +1,6 @@
 .body
-  .header
-    .header__inner
-      = image_tag 'logo.png', alt: '', height: '', width: '', class: 'header__inner-logo'
-        
-
-
+  %header.header
+    = render 'items/header' 
   .container
     %h2.container__top 新規会員登録
 
@@ -66,4 +62,5 @@
 
       = render "devise/shared/links"
 
-  .footer
+  %footer.footer
+    = render 'items/footer'
