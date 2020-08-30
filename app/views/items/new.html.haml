@@ -83,7 +83,7 @@
           .box
             = form.label :price,"販売価格", class: "new-content-title"
             = render partial:'req' 
-          = form.text_field :price, placeholder: "値段", class: "new-content-form-price"
+          = form.text_field :price, placeholder: "値段", class: "new-content-form-price money"
       .price-box
         %p 販売手数料（10%）
         %p.right-content ¥1000
