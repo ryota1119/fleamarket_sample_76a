@@ -72,7 +72,7 @@
         = form.label :shipping_date,"発送までの日数", class: "new-content-title"
         = render partial:'req' 
         <br>
-        = form.select :shipping_date, {},{},{ class: "new-content-form"}
+        = form.select :shipping_date, Item.shipping_dates.keys,{},{ class: "new-content-form"}
         <br>
 
 

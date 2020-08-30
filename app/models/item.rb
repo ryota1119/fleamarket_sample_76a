@@ -20,5 +20,11 @@ class Item < ApplicationRecord
     出品者: 1,
     購入者: 2
   }
-  
+  enum shipping_date:{
+    本日: 1,
+    明日: 2,
+    ３日以内: 3,
+    １週間以内: 4
+  }
+
 end
