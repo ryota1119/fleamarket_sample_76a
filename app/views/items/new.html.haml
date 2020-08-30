@@ -65,7 +65,7 @@
         = form.label :shipping_from,"発送元の地域", class: "new-content-title"
         = render partial:'req' 
         <br>
-        = form.select :shipping_from, {},{},{ class: "new-content-form"}
+        = form.select :shipping_from, Item.shipping_froms.keys,{},{ class: "new-content-form"}
         <br>
 
       .new-content
