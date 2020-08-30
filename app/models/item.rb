@@ -1,5 +1,9 @@
 class Item < ApplicationRecord
-  enum condition: {良い: 1, 普通: 2, 悪い: 3}
+  enum condition: {
+    良い: 1,
+    普通: 2,
+    悪い: 3
+  }
   enum shipping_from: {
     選択してください:0,
     北海道:1,青森県:2,岩手県:3,宮城県:4,秋田県:5,山形県:6,福島県:7,
@@ -12,5 +16,9 @@ class Item < ApplicationRecord
     福岡県:40,佐賀県:41,長崎県:42,熊本県:43,大分県:44,宮崎県:45,鹿児島県:46, 
     沖縄県:47
   }
-  enum shipping_costs:{}
+  enum shipping_costs:{
+    出品者: 1,
+    購入者: 2
+  }
+  
 end

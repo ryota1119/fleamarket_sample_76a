@@ -58,7 +58,7 @@
         = form.label :shipping_costs,"配送料の負担", class: "new-content-title"
         = render partial:'req' 
         <br>
-        = form.select :shipping_costs, {},{},{ class: "new-content-form"}
+        = form.select :shipping_costs, Item.shipping_costs.keys,{},{ class: "new-content-form"}
         <br>
 
       .new-content
