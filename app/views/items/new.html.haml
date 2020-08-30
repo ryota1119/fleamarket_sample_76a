@@ -1,5 +1,4 @@
-%header.header
-  = = render ''
+= render partial: 'header'
 
 .new-wrapper
   = form_with model: @item, local: true do |form|
@@ -22,7 +21,7 @@
         <br>
 
       .new-content
-        = form.label :name,"商品の説明", class: "new-content-title"
+        = form.label :description,"商品の説明", class: "new-content-title"
         = render partial:'req' 
         <br>
         = form.text_area :description, placeholder: "説明", class: "new-content-form-area"
@@ -32,57 +31,58 @@
     .form-container
       %h2.form-container-title 商品の詳細
       .new-content
-        = form.label :name,"カテゴリ", class: "new-content-title"
+        = form.label :brand,"カテゴリ", class: "new-content-title"
         = render partial:'req' 
         <br>
         = form.text_field :brand, placeholder: "カテゴリ", class: "new-content-form"
         <br>
 
       .new-content
-        = form.label :name,"ブランド", class: "new-content-title"
-        任意
+        = form.label :brand,"ブランド", class: "new-content-title"
+        = render partial:'any'
         <br>
         = form.text_field :brand, placeholder: "ブランド", class: "new-content-form"
         <br>
 
       .new-content
-        = form.label :name,"状態", class: "new-content-title"
+        = form.label :condition,"状態", class: "new-content-title"
         = render partial:'req' 
         <br>
-        = form.select :condition, {状態: "状態", 新品: "新品", ほぼ新品: "ほぼ新品", やや傷あり: "やや傷あり", 傷あり: "傷あり"}
+        = form.select :condition, {},{},{ class: "new-content-form"}
         <br>
 
 
     .form-container
       %h2.form-container-title 配送について
       .new-content
-        = form.label :name,"配送料の負担", class: "new-content-title"
+        = form.label :shipping_costs,"配送料の負担", class: "new-content-title"
         = render partial:'req' 
         <br>
-        = form.select :shipping_costs, {配送料の負担: "配送料の負担", 出品者: "出品者", 購入者: "購入者"}, class: "new-content-form"
+        = form.select :shipping_costs, {},{},{ class: "new-content-form"}
         <br>
 
       .new-content
-        = form.label :name,"発送元の地域", class: "new-content-title"
+        = form.label :shipping_from,"発送元の地域", class: "new-content-title"
         = render partial:'req' 
         <br>
-        = form.select :shipping_from, Item.shipping_froms.keys, class: "new-content-form"
+        = form.select :shipping_from, {},{},{ class: "new-content-form"}
         <br>
 
       .new-content
-        = form.label :name,"発送までの日数", class: "new-content-title"
+        = form.label :shipping_date,"発送までの日数", class: "new-content-title"
         = render partial:'req' 
         <br>
-        = form.select :shipping_date, { 選択してください: "0",１−２日で発送: "1", ２−３日で発送: "2", ４−７日で発送: "3"}, class: "new-content-form"
+        = form.select :shipping_date, {},{},{ class: "new-content-form"}
         <br>
 
 
     .form-container
       .new-content
-        = form.label :name,"価格（¥300〜9,999,999）", class: "new-content-title"
-        = render partial:'req' 
+        = form.label :price,"価格（¥300〜9,999,999）", class: "new-content-title"
         <br>
-        = form.text_field :price, placeholder: "値段", class: "new-content-form"
+        = form.label :price,"販売価格", class: "new-content-title"
+        = render partial:'req' 
+        = form.text_field :price, placeholder: "値段", class: "new-content-form-price"
         <br>
         販売手数料（10%）
         <br>

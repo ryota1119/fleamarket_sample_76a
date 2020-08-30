@@ -511,6 +511,16 @@ body {
     border-radius: 2px;
 }
 
+.any {
+    background-color: #bfbfbf;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 2px 4px;
+    margin-left: 8px;
+    border-radius: 2px;
+}
+
 .form-container {
     padding: 40px;
     border-top: 1px solid #efefef;
@@ -543,6 +553,17 @@ body {
         margin-bottom: 10px;
         border: 1px solid #ccc;
         border-radius: 4px;
+        cursor: pointer;
+    }
+    &-form-price {
+        height: 50px;
+        width: 50%;
+        padding: 0 16px;
+        margin: 24px 0 10px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        cursor: pointer;
     }
     &-form-area {
         height: 150px;
