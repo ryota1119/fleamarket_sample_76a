@@ -11,4 +11,6 @@ class Item < ApplicationRecord
     validates :shipping_date
     validates :price
   end
+  validates_associated :images
+  validates :images, presence: true
 end

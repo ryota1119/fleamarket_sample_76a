@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_28_062938) do
+ActiveRecord::Schema.define(version: 2020_08_28_041207) do
 
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "src", null: false
@@ -32,9 +32,6 @@ ActiveRecord::Schema.define(version: 2020_08_28_062938) do
     t.integer "price", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "seller_id"
-    t.bigint "image_id"
-    t.index ["image_id"], name: "index_items_on_image_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -57,5 +54,4 @@ ActiveRecord::Schema.define(version: 2020_08_28_062938) do
   end
 
   add_foreign_key "images", "items"
-  add_foreign_key "items", "images"
 end
