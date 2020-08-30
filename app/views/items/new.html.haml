@@ -48,7 +48,7 @@
         = form.label :condition,"状態", class: "new-content-title"
         = render partial:'req' 
         <br>
-        = form.select :condition, {},{},{ class: "new-content-form"}
+        = form.select :condition, Item.conditions.keys,{},{ class: "new-content-form"}
         <br>
 
 
