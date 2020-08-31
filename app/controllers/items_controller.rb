@@ -6,12 +6,13 @@ class ItemsController < ApplicationController
     @item = Item.new
     @item.images.new
   end
-
+  
   def create
     @item = Item.new(item_params)
     if @item.save
       redirect_to root_path
     else
+      @item.images.new
       render :new
     end
   end
