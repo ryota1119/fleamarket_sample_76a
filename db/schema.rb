@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2020_08_28_041207) do
     t.text "description", null: false
     t.string "brand", null: false
     t.integer "condition", null: false
-    t.integer "status", null: false
+    t.integer "status", default: 1, null: false
     t.integer "shipping_costs", null: false
     t.integer "shipping_from", null: false
     t.integer "shipping_date", null: false
