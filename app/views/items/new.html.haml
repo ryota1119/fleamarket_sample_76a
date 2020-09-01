@@ -1,6 +1,6 @@
 = render partial: 'header'
 
-.new-wrapper
+.sell-item__wrapper
   = form_with model: @item, local: true do |form|
     .form-container
       .new-content
@@ -8,7 +8,7 @@
         = render partial:'req' 
         <br>
         %p.new-content-max-images 最大１０枚までアップロードできます
-        = form.text_field :name, placeholder: "写真投稿してください", class: "new-content-form-area"
+        = form.file_field :name, class: "new-content-form-area-hidden"
         <br>
 
 
@@ -24,17 +24,18 @@
         = form.label :description,"商品の説明", class: "new-content-title"
         = render partial:'req' 
         <br>
-        = form.text_area :description, placeholder: "説明", class: "new-content-form-area"
+        = form.text_area :description, placeholder: "(必須　1,000文字以内)（色、素材、重さ、定価、注意点など）  (例）2010年頃に１万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", class: "new-content-form-area"
         <br>
 
 
     .form-container
       %h2.form-container-title 商品の詳細
       .new-content
-        = form.label :brand,"カテゴリ", class: "new-content-title"
+        //現状カテゴリカラムが実装できていないため、空白で設定しています。
+        = form.label '',"カテゴリ", class: "new-content-title" 
         = render partial:'req' 
         <br>
-        = form.text_field :brand, placeholder: "カテゴリ", class: "new-content-form"
+        = form.text_field '', placeholder: "カテゴリ", class: "new-content-form"
         <br>
 
       .new-content
