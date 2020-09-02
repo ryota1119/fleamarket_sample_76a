@@ -59,6 +59,7 @@ group :development, :test do
   gem 'capistrano-rails-console'
   gem 'carrierwave'
   gem 'mini_magick'
+  gem 'rspec-rails'
 end
 
 group :development do
