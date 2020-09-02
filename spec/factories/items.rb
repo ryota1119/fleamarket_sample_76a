@@ -9,7 +9,8 @@ FactoryBot.define do
     shipping_costs {"1"}   
     shipping_from  {"1"}   
     shipping_date  {"1"}   
-    price          {"1"}   
+    price          {"1"}
+    images {[build(:image)]}   
   end
 
 end

@@ -50,5 +50,12 @@ describe Item do
       expect(item.errors[:price]).to include("can't be blank")
     end
 
+    let(:src) { File.join(Rails.root, 'spec/factories/test.jpg') }
+    let(:image) { Rack::Test::UploadedFile.new(src) }
+      it "name,description,brand,condition,status,shipping_costs,shipping_from,shipping_date,priceが存在すれば登録できること" do
+        item = build(:item)
+        expect(item).to be_valid
+      end
+
   end
 end
