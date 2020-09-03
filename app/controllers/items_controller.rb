@@ -4,7 +4,6 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    @item.item_images.new
     @category_parent_array = ["---"]
     @category_parent_array = Category.where(ancestry: nil)
   end
@@ -16,4 +15,12 @@ class ItemsController < ApplicationController
   def get_category_grandchildren
     @category_grandchildren = Category.find(params[:children_id]).children_id
   end
+end
+  end
+
+  private
+  def item_params
+    params.requite(:item).permit(:name)
+  end
+  
 end

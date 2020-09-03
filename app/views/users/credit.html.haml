@@ -1,7 +1,6 @@
-.header
-  .header__title
-    = image_tag 'logo/logo.png', alt: 'logo', height: '70px', width: '', class: 'header__title__logo'
-.mypage
+%header.header
+  = render 'items/header'
+.mypage.clearfix
   = render partial: 'user-side'
   .credit
     .credit__top
@@ -70,3 +69,5 @@
           = text_field_tag "cvc", "", class: "credit__form__box__input", placeholder: "カード背面3~4桁の番号", maxlength: "4", id: "cvc"
         .card_token
           = submit_tag "追加する", id: "token_submit", class: "credit__form__submit-btn"
+%footer.footer
+  = render 'items/footer'
