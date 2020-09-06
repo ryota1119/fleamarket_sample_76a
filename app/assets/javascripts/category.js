@@ -1,16 +1,15 @@
 $(function(){
   function appendOption(category){
-    var html = `<option value="${category.name}" data-category="${category.id}">${category.name}</option>`;
+    var html = `<option value="${category.id}" data-category="${category.id}">${category.name}</option>`;
     return html;
   }
   function appendChidrenBox(insertHTML){
     var childSelectHtml = '';
     childSelectHtml = `<div class='new-content-wrapper__added' id= 'children_wrapper'>
                         <div class='new-content-wrapper__box'>
-                          <select class="new-content-wrapper__box--select" id="child_category" name="category_id">
+                          <select class="new-content-wrapper__box--select" id="child_category" name="item[category_id]">
                             <option value="---" data-category="---">---</option>
                             ${insertHTML}
-                          <select>
                         </div>
                       </div>`;
     $('.category-select').append(childSelectHtml);
@@ -19,10 +18,9 @@ $(function(){
     var grandchildSelectHtml = '';
     grandchildSelectHtml = `<div class='new-content-wrapper__added' id= 'grandchildren_wrapper'>
                               <div class='new-content-wrapper__box'>
-                                <select class="new-content-wrapper__box--select" id="grandchild_category" name="category_id">
+                                <select class="new-content-wrapper__box--select" id="grandchild_category" name="item[category_id]">
                                   <option value="---" data-category="---">---</option>
                                   ${insertHTML}
-                                </select>
                               </div>
                             </div>`;
     $('.category-select').append(grandchildSelectHtml);
@@ -87,8 +85,4 @@ $(function(){
       $('#brand_wrapper').remove();
     }
   });
-  $('.new-content').on('change', '#grandchild_category', function () {
-    var grandChildId = $('#grandchild_category option:selected').data('category');
-    console.log(grandChildId);
-  })
 });
