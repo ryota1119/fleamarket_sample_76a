@@ -4,6 +4,7 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
+    @item.images.new
     @category_parent_array = ["---"]
     Category.where(ancestry: nil).each do |parent|
       @category_parent_array << parent.name
@@ -15,6 +16,7 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to root_path
     else
+      @item.images.new
       render :new
     end
   end
@@ -25,11 +27,13 @@ class ItemsController < ApplicationController
 
   def get_category_grandchildren
     @category_grandchildren = Category.find("#{params[:child_id]}").children
+    end
   end
 
   private
-  def item_params
-    params.require(:item).permit(:name)
-  end
   
+  def item_params
+    params.require(:item).permit(:name, :description, :brand, :condition, :status, :shipping_costs, :shipping_from, :shipping_date, :price, images_attributes: [:src])
+  end
+
 end
