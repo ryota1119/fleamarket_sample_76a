@@ -10,6 +10,15 @@ class ItemsController < ApplicationController
     end
   end
 
+  def create
+    @item = Item.new(item_params)
+    if @item.save
+      redirect_to root_path
+    else
+      render :new
+    end
+  end
+
   def get_category_children
     @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
   end
@@ -20,7 +29,7 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.requite(:item).permit(:name)
+    params.require(:item).permit(:name)
   end
   
 end
