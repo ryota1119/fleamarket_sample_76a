@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_22_085455) do
+ActiveRecord::Schema.define(version: 2020_08_28_041207) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "postal_code", null: false
@@ -25,18 +25,26 @@ ActiveRecord::Schema.define(version: 2020_08_22_085455) do
     t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 
-  create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "src", null: false
+    t.bigint "item_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_images_on_item_id"
+  end
+
+  create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.text "description", null: false
     t.string "brand", null: false
-    t.integer "condition", default: 1, null: false
-    t.integer "status", null: false
-    t.integer "shipping_costs", default: 1, null: false
-    t.integer "shipping_from", default: 1, null: false
-    t.integer "shipping_date", default: 1, null: false
-    t.integer "price", default: 0, null: false
+    t.integer "condition", null: false
+    t.integer "status", default: 1, null: false
+    t.integer "shipping_costs", null: false
+    t.integer "shipping_from", null: false
+    t.integer "shipping_date", null: false
+    t.integer "price", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -59,4 +67,5 @@ ActiveRecord::Schema.define(version: 2020_08_22_085455) do
   end
 
   add_foreign_key "addresses", "users"
+  add_foreign_key "images", "items"
 end
