@@ -14,6 +14,17 @@ describe Item do
       expect(item.errors[:description]).to include("can't be blank")
     end
 
+    it "descriptionが1001文字以上では登録できないこと" do
+      item = build(:item, description: "a" * 1001)
+      item.valid?
+      expect(item.errors[:description]).to include("is too long (maximum is 1000 characters)")
+    end
+
+    it "descriptionが1000文字であれば登録できること" do
+      item = build(:item, description: "a" * 1000 )
+      expect(item).to be_valid
+    end
+
     it "conditonがない場合は登録できないこと" do
       item = build(:item, condition: nil)
       item.valid?
@@ -50,9 +61,21 @@ describe Item do
       expect(item.errors[:price]).to include("can't be blank")
     end
 
+    it "priceが300より小さいと登録できないこと" do
+      item = build(:item, price: 299)
+      item.valid?
+      expect(item.errors[:price]).to include("must be greater than or equal to 300")
+    end
+
+    it "priceが9999999より大きいと登録できないこと" do
+      item = build(:item, price: 10000000)
+      item.valid?
+      expect(item.errors[:price]).to include("must be less than or equal to 9999999")
+    end
+
     let(:src) { File.join(Rails.root, 'spec/factories/test.jpg') }
     let(:image) { Rack::Test::UploadedFile.new(src) }
-      it "name,description,brand,condition,status,shipping_costs,shipping_from,shipping_date,priceが存在すれば登録できること" do
+      it "name,description,brand,condition,status,shipping_costs,shipping_from,shipping_date,aが存在すれば登録できること" do
         item = build(:item)
         expect(item).to be_valid
       end
