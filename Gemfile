@@ -59,8 +59,6 @@ group :development, :test do
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
   gem 'capistrano-rails-console'
-  gem 'carrierwave'
-  gem 'mini_magick'
   gem 'rspec-rails'
   gem 'factory_bot_rails'
 end

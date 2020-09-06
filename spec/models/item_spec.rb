@@ -25,7 +25,7 @@ describe Item do
       expect(item).to be_valid
     end
 
-    it "conditonがない場合は登録できないこと" do
+    it "conditionがない場合は登録できないこと" do
       item = build(:item, condition: nil)
       item.valid?
       expect(item.errors[:condition]).to include("can't be blank")
