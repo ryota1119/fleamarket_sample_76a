@@ -35,5 +35,3 @@ class ItemsController < ApplicationController
   def item_params
     params.require(:item).permit(:name, :description, :brand, :condition, :status, :shipping_costs, :shipping_from, :shipping_date, :price, images_attributes: [:src])
   end
-
-end
