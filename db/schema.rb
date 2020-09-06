@@ -10,15 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_23_051505) do
-
-  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "ancestry"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["ancestry"], name: "index_categories_on_ancestry"
-ActiveRecord::Schema.define(version: 2020_08_22_085455) do
+ActiveRecord::Schema.define(version: 2020_09_04_130007) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "postal_code", null: false
@@ -33,6 +25,14 @@ ActiveRecord::Schema.define(version: 2020_08_22_085455) do
     t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 
+  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "ancestry"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["ancestry"], name: "index_categories_on_ancestry"
+  end
+
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -45,6 +45,8 @@ ActiveRecord::Schema.define(version: 2020_08_22_085455) do
     t.integer "shipping_from", default: 1, null: false
     t.integer "shipping_date", default: 1, null: false
     t.integer "price", default: 0, null: false
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_items_on_category_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -67,4 +69,5 @@ ActiveRecord::Schema.define(version: 2020_08_22_085455) do
   end
 
   add_foreign_key "addresses", "users"
+  add_foreign_key "items", "categories"
 end
