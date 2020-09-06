@@ -1,8 +1,6 @@
 .body
-  .sessions__header
-    .sessions__header__inner
-      = image_tag 'logo.png', alt: '', height: '', width: '', class: 'sessions__header__inner-logo'
-
+  %header.header
+    = render "items/header"
   .sessions__container
     %h2.sessions__container__top ログイン
     .container__form
@@ -21,7 +19,7 @@
           = f.submit "ログイン",class:"sessions__container__form__box__submit"
 
       = render "devise/shared/links"
-  .sessions__footer
-
+  %footer.footer 
+    = render "items/footer" 
 
 
