@@ -11,6 +11,7 @@ class Item < ApplicationRecord
     validates :shipping_from
     validates :shipping_date
     validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 }
+    validates :category_id
   end
   validates_associated :images
   validates :images, presence: true
