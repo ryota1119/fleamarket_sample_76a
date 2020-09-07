@@ -10,7 +10,8 @@ FactoryBot.define do
     shipping_from  {1}   
     shipping_date  {1}   
     price          {10000}
-    images {[build(:image)]}   
+    images {[build(:image)]}
+    category_id {400}
   end
 
 end
