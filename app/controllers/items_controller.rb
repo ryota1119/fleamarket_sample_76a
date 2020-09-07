@@ -13,6 +13,11 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
+    @category_parent_array = ["---"]
+    Category.where(ancestry: nil).each do |parent|
+      @category_parent_array << parent.name
+    end
+    binding.pry
     if @item.save
       redirect_to root_path
     else
