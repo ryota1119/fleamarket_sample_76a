@@ -73,6 +73,12 @@ describe Item do
       expect(item.errors[:price]).to include("must be less than or equal to 9999999")
     end
 
+    it "category_idがない場合は登録できないこと" do
+      item = build(:item, category_id: nil)
+      item.valid?
+      expect(item.errors[:category_id]).to include("can't be blank")
+    end
+
     let(:src) { File.join(Rails.root, 'spec/factories/test.jpg') }
     let(:image) { Rack::Test::UploadedFile.new(src) }
       it "name,description,brand,condition,status,shipping_costs,shipping_from,shipping_date,aが存在すれば登録できること" do
