@@ -74,7 +74,8 @@ describe Item do
     end
 
     it "category_idがない場合は登録できないこと" do
-      item = build(:item, category_id: nil)
+      item = build(:item)
+      item[:category_id] = nil
       item.valid?
       expect(item.errors[:category_id]).to include("can't be blank")
     end
