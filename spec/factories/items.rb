@@ -11,7 +11,15 @@ FactoryBot.define do
     shipping_date  {1}   
     price          {10000}
     images {[build(:image)]}
-    category_id {400}
+    
+    after(:build) do |item|
+      parent_category = create(:category)
+      child_category = parent_category.children.create(name: "child")
+      grand_child_category = child_category.children.create(name: "grandchild")
+
+      item.category_id = grand_child_category.id
+    end
+    
   end
 
 end
