@@ -15,7 +15,6 @@
             %span.js-remove 削除
         <br>
 
-
     .form-container
       .new-content
         = form.label :name,"商品名", class: "new-content-title"
@@ -34,13 +33,12 @@
 
     .form-container
       %h2.form-container-title 商品の詳細
-      -# .new-content
-      -#   //現状カテゴリカラムが実装できていないため、空白で設定しています。
-      -#   = form.label '',"カテゴリ", class: "new-content-title" 
-      -#   = render partial:'req' 
-      -#   <br>
-      -#   = form.text_field '', placeholder: "カテゴリ", class: "new-content-form"
-      -#   <br>
+      .new-content.category-select
+        = form.label '',"カテゴリ", class: "new-content-title" 
+        = render partial:'req' 
+        .new-content-wrapper
+          .new-content-wrapper__box
+            = form.select :category, @category_parent_array, {}, {class: 'new-content-wrapper__box--select', id: 'parent_category'}
 
       .new-content
         = form.label :brand,"ブランド", class: "new-content-title"
