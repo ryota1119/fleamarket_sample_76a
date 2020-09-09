@@ -5,18 +5,12 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.images.new
-    @category_parent_array = ["---"]
-    Category.where(ancestry: nil).each do |parent|
-      @category_parent_array << parent.name
-    end
+    @category_parent_array = Category.where(ancestry: nil).pluck(:name).unshift("---")
   end
 
   def create
     @item = Item.new(item_params)
-    @category_parent_array = ["---"]
-    Category.where(ancestry: nil).each do |parent|
-      @category_parent_array << parent.name
-    end
+    @category_parent_array = Category.where(ancestry: nil).pluck(:name).unshift("---")
     if @item.save
       redirect_to root_path
     else
