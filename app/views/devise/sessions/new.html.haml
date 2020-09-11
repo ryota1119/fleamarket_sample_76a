@@ -13,12 +13,11 @@
         .field.container__form__box
           = f.label :password,"パスワード",class:"sessions__container__form__box-title"
           %br/
-          = f.password_field :password, autocomplete: "new-password",class:"sessions__container__form__box-inputbox",placeholder:"○文字以上の英数字"
+          = f.password_field :password, autocomplete: "new-password",class:"sessions__container__form__box-inputbox",placeholder:"パスワードを入力してください"
 
         .actions.container__form__box
           = f.submit "ログイン",class:"sessions__container__form__box__submit"
 
-      = render "devise/shared/links"
   %footer.footer 
     = render "items/footer" 
 
