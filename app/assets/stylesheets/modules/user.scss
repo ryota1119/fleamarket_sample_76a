@@ -17,7 +17,7 @@
     width: 100%;
 }
 
-.header {
+.sessions__header {
     height: 120px;
     width: 100%;
     &__inner {
@@ -31,7 +31,7 @@
     }
 }
 
-.container {
+.sessions__container {
     width: 700px;
     padding: 20px 0 50px;
     margin: 0 auto;
@@ -135,7 +135,7 @@
     }
 }
 
-.footer {
+.sessions__footer {
     width: 100%;
     height: 220px;
 }

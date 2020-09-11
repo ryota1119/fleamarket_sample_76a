@@ -1,27 +1,25 @@
 .body
-  .header
-    .header__inner
-      = image_tag 'logo.png', alt: '', height: '', width: '', class: 'header__inner-logo'
-
-  .container
-    %h2.container__top ログイン
+  %header.header
+    = render "items/header"
+  .sessions__container
+    %h2.sessions__container__top ログイン
     .container__form
       = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
         .field.container__form__box
-          = f.label :email,"メールアドレス",class:"container__form__box-title"
+          = f.label :email,"メールアドレス",class:"sessions__container__form__box-title"
           %br/
-          = f.email_field :email, autofocus: true, autocomplete: "email",class:"container__form__box-inputbox",placeholder:"PC・携帯どちらでも可"
+          = f.email_field :email, autofocus: true, autocomplete: "email",class:"sessions__container__form__box-inputbox",placeholder:"PC・携帯どちらでも可"
 
         .field.container__form__box
-          = f.label :password,"パスワード",class:"container__form__box-title"
+          = f.label :password,"パスワード",class:"sessions__container__form__box-title"
           %br/
-          = f.password_field :password, autocomplete: "new-password",class:"container__form__box-inputbox",placeholder:"○文字以上の英数字"
+          = f.password_field :password, autocomplete: "new-password",class:"sessions__container__form__box-inputbox",placeholder:"○文字以上の英数字"
 
         .actions.container__form__box
-          = f.submit "ログイン",class:"container__form__box__submit"
+          = f.submit "ログイン",class:"sessions__container__form__box__submit"
 
       = render "devise/shared/links"
-  .footer
-
+  %footer.footer 
+    = render "items/footer" 
 
 
