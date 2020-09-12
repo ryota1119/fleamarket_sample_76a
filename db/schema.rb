@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 2020_09_04_130007) do
     t.integer "shipping_from", default: 1, null: false
     t.integer "shipping_date", default: 1, null: false
     t.integer "price", default: 0, null: false
-    t.bigint "category_id", null: false
+    t.bigint "category_id"
     t.index ["category_id"], name: "index_items_on_category_id"
   end
 

@@ -1,6 +1,7 @@
 .body
   %header.header
     = render 'items/header' 
+    
   .sessions__container
     %h2.sessions__container__top 新規会員登録
     .sessions__container__form
@@ -27,6 +28,13 @@
           %span.sessions__container__form__box-req 必須
           %br/
           = f.password_field :password, prefix:'',class:"sessions__container__form__box-inputbox",placeholder:"○文字以上の英数字"
+          %p ※ 英字と数字の両方を含めて設定してください
+
+        .field.sessions__container__form__box
+          = f.label :password_conform,"パスワード(確認用)",class:"sessions__container__form__box-title"
+          %span.sessions__container__form__box-req 必須
+          %br/
+          = f.password_field :password_conform, prefix:'',class:"sessions__container__form__box-inputbox",placeholder:"○文字以上の英数字"
           %p ※ 英字と数字の両方を含めて設定してください
 
           %input.pass-checkbox{type: "checkbox"}
