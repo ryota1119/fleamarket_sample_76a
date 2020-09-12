@@ -31,10 +31,10 @@
           %p ※ 英字と数字の両方を含めて設定してください
 
         .field.sessions__container__form__box
-          = f.label :password_conform,"パスワード(確認用)",class:"sessions__container__form__box-title"
+          = f.label :password_confirmation,"パスワード(確認用)",class:"sessions__container__form__box-title"
           %span.sessions__container__form__box-req 必須
           %br/
-          = f.password_field :password_conform, prefix:'',class:"sessions__container__form__box-inputbox",placeholder:"○文字以上の英数字"
+          = f.password_field :password_confirmation, prefix:'',class:"sessions__container__form__box-inputbox",placeholder:"○文字以上の英数字"
           %p ※ 英字と数字の両方を含めて設定してください
 
           %input.pass-checkbox{type: "checkbox"}
@@ -45,18 +45,18 @@
           %p 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
 
         .field.sessions__container__form__box.clearfix
-          = f.label :last_name,"お名前（全角）",class:"sessions__container__form__box-title"
+          = f.label :first_name,"お名前（全角）",class:"sessions__container__form__box-title"
           %span.sessions__container__form__box-req 必須
           %br/
-          = f.text_field :last_name, prefix:'', class:"container__form__box-inputbox-firstname",placeholder:"例)佐藤"
-          = f.text_field :first_name, prefix:'', class:"container__form__box-inputbox-lastname",placeholder:"例)太郎"
+          = f.text_field :first_name, prefix:'', class:"container__form__box-inputbox-firstname",placeholder:"例)佐藤"
+          = f.text_field :last_name, prefix:'', class:"container__form__box-inputbox-lastname",placeholder:"例)太郎"
 
         .field.sessions__container__form__box.clearfix
           = f.label :last_name_kana,"お名前（カナ）",class:"sessions__container__form__box-title"
           %span.sessions__container__form__box-req 必須
           %br/
-          = f.text_field :last_name_kana, prefix:'',class:"container__form__box-inputbox-firstname",placeholder:"例)サトウ"
-          = f.text_field :first_name_kana, prefix:'',class:"container__form__box-inputbox-lastname",placeholder:"例)タロウ"
+          = f.text_field :first_name_kana, prefix:'',class:"container__form__box-inputbox-firstname",placeholder:"例)サトウ"
+          = f.text_field :last_name_kana, prefix:'',class:"container__form__box-inputbox-lastname",placeholder:"例)タロウ"
 
         .field.sessions__container__form__box
           = f.label :birthday,"生年月日",class:"sessions__container__form__box-title"
