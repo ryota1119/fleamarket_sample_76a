@@ -103,6 +103,11 @@
     %p 販売利益
     %p.right-content
 
-.form-container
-  = form.submit "出品する",class: "new-submit" 
-  %p.precautions 禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
+- if request.path_info = edit_item_path
+  .form-container
+    = form.submit "更新する",class: "new-submit" 
+    %p.precautions 禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
+- else
+  .form-container
+    = form.submit "出品する",class: "new-submit" 
+    %p.precautions 禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
