@@ -29,6 +29,11 @@ class ItemsController < ApplicationController
     @category_grandchildren_array = Category.where(ancestry: grandchild_category.ancestry)
   end
 
+  def update
+    @item.update(item_params)
+    redirect_to root_path
+  end
+
   def get_category_children
     @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
   end
