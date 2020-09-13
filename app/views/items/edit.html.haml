@@ -1,0 +1,5 @@
+= render partial: 'header'
+
+.sell-item__wrapper
+  = form_with model: @item, local: true do |form|
+    = render partial: "form", locals: { form: form }
