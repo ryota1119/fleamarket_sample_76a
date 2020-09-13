@@ -32,7 +32,7 @@
   .new-content.category-select
     = form.label '',"カテゴリ", class: "new-content-title" 
     = render partial:'req' 
-    - if request.path_info = edit_item_path
+    - if controller.action_name == "edit"
       .new-content-wrapper#parent_wrapper
         .new-content-wrapper__box
           = form.select :parent_name, @category_parent_array, {selected:@item.category.parent.parent.name}, {class: 'new-content-wrapper__box--select', id: 'parent_category'}
@@ -103,7 +103,7 @@
     %p 販売利益
     %p.right-content
 
-- if request.path_info = edit_item_path
+- if controller.action_name == "edit"
   .form-container
     = form.submit "更新する",class: "new-submit" 
     %p.precautions 禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
