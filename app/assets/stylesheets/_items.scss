@@ -440,6 +440,19 @@ body {
         border: 1px solid #ccc;
         border-radius: 4px;
     }
+    &-wrapper {
+        &__box {
+            &--select {
+                height: 50px;
+                width: 100%;
+                padding: 0 16px;
+                margin: 16px 0 16px 0;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+        }
+    }
 }
 
 .price-box {
