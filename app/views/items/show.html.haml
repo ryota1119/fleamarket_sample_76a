@@ -28,11 +28,11 @@
               %tr
                 %th カテゴリー
                 %td
-                  = link_to('レディース', '#')
+                  = link_to(@parent_category.name, '#')
                   %br/
-                  = link_to('トップス', '#')
+                  = link_to(@child_category.name, '#')
                   %br/
-                  = link_to('Tシャツ/カットソー', '#')
+                  = link_to(@grand_child_category.name, '#')
               %tr
                 %th ブランド
                 %td 
