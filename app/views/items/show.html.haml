@@ -36,22 +36,23 @@
               %tr
                 %th ブランド
                 %td 
-              %tr
-                %th 商品のサイズ
-                %td
+                  = @item.brand
               %tr
                 %th 商品の状態
-                %td 新品/未使用
+                %td
+                  = @item.condition
               %tr
                 %th 配送料の負担
-                %td 送料込み(出品者負担)
+                %td
+                  = @item.shipping_costs
               %tr
                 %th 発送元の地域
                 %td
-                  = link_to('北海道', '#')
+                  = @item.shipping_from
               %tr
                 %th 発送日の目安
-                %td １−２日で発送
+                %td
+                  = @item.shipping_date
         .items__show__main__container__top__itemBox__optionalArea
       .items__show__main__container__top__commentBox
     .items__show__main__container__link
@@ -62,3 +63,5 @@
 
 %footer.footer
   = render 'footer'
+
+= render "purchase_btn"
