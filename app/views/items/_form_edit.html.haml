@@ -9,7 +9,6 @@
         = image.file_field :src, class: 'new-content-form-area-hidden js-file'
         <br>
         %span.js-remove 削除
-    <br>
 
 .form-container
   .new-content
@@ -32,20 +31,15 @@
   .new-content.category-select
     = form.label '',"カテゴリ", class: "new-content-title" 
     = render partial:'req' 
-    - if controller.action_name == "edit"
-      .new-content-wrapper#parent_wrapper
-        .new-content-wrapper__box
-          = form.select :parent_name, @category_parent_array, {selected:@item.category.parent.parent.name}, {class: 'new-content-wrapper__box--select', id: 'parent_category'}
-      .new-content-wrapper#children_wrapper
-        .new-content-wrapper__box
-          = form.select :child_id, options_for_select(@category_children_array.map{|b| [b.name, b.id, {data:{category: b.id}}]}, {prompt: "指定なし", selected: @item.category.parent.id}),{}, {class: 'new-content-wrapper__box--select', id: 'child_category'}
-      .new-content-wrapper#grandchildren_wrapper
-        .new-content-wrapper__box
-          = form.select :category_id, options_for_select(@category_grandchildren_array.map{|b| [b.name, b.id, {data:{category: b.id}}]}, {prompt: "指定なし", selected: @item.category.id}),{}, {class: 'new-content-wrapper__box--select', id: 'grandchild_category'}
-    - else
-      .new-content-wrapper
-        .new-content-wrapper__box
-          = form.select :category, @category_parent_array, {}, {class: 'new-content-wrapper__box--select', id: 'parent_category'}
+    .new-content-wrapper#parent_wrapper
+      .new-content-wrapper__box
+        = form.select :parent_name, @category_parent_array, {selected:@item.category.parent.parent.name}, {class: 'new-content-wrapper__box--select', id: 'parent_category'}
+    .new-content-wrapper#children_wrapper
+      .new-content-wrapper__box
+        = form.select :child_id, options_for_select(@category_children_array.map{|b| [b.name, b.id, {data:{category: b.id}}]}, {prompt: "指定なし", selected: @item.category.parent.id}),{}, {class: 'new-content-wrapper__box--select', id: 'child_category'}
+    .new-content-wrapper#grandchildren_wrapper
+      .new-content-wrapper__box
+        = form.select :category_id, options_for_select(@category_grandchildren_array.map{|b| [b.name, b.id, {data:{category: b.id}}]}, {prompt: "指定なし", selected: @item.category.id}),{}, {class: 'new-content-wrapper__box--select', id: 'grandchild_category'}
           
   .new-content
     = form.label :brand,"ブランド", class: "new-content-title"
@@ -103,11 +97,6 @@
     %p 販売利益
     %p.right-content
 
-- if controller.action_name == "edit"
-  .form-container
-    = form.submit "更新する",class: "new-submit" 
-    %p.precautions 禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
-- else
-  .form-container
-    = form.submit "出品する",class: "new-submit" 
-    %p.precautions 禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
+.form-container
+  = form.submit "更新する",class: "new-submit" 
+  %p.precautions 禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
