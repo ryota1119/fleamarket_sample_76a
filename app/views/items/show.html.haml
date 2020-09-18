@@ -12,8 +12,9 @@
             %li
               = image_tag @item.images[0].src.url, height: '300px', width: '300px'
             %ul
-              %li
-                = image_tag @item.images[0].src.url, height: '100px', width: '100px'
+              - @item.images.each do |image|
+                %li
+                  = image_tag image.src.url, height: '100px', width: '100px'
         .items__show__main__container__top__itemBox__price
           = "¥#{@item.price}"
           %br (税込)送料込
@@ -53,10 +54,14 @@
                 %th 発送日の目安
                 %td
                   = @item.shipping_date
-        .items__show__main__container__top__itemBox__optionalArea
-      .items__show__main__container__top__commentBox
-    .items__show__main__container__link
-    .items__show__main__container__relationItems
+        .items__show__main__container__top__itemBox__buy-btn
+          = link_to '購入画面に進む', '#'
+    -#   items__show__main__container__top__itemBox__optionalArea
+    -#   お気に入り登録機能、通報機能を後に実装
+    -#   .items__show__main__container__top__commentBox
+    -#   コメントボックスを後に実装
+    -# .items__show__main__container__relationItems
+    -# 関連商品の表示機能を後に実装
 
 .app-banner
   = render 'app-banner'
