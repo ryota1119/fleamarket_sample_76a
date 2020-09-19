@@ -1,5 +1,12 @@
 = render partial: 'header'
 
+- if @item.errors.any?
+  #error_explanation.alert-danger
+    %ul
+      - @item.errors.full_messages.each do |message|
+        %li
+          = message
+
 .sell-item__wrapper
   = form_with model: @item, local: true do |form|
     .form-container
