@@ -58,7 +58,7 @@
         = f.label :condition,"状態", class: "new-content-title"
         = render partial:'req' 
         %br/
-        = f.select :condition, Item.conditions.keys,{},{ class: "new-content-form"}
+        = f.select :condition, Item.conditions.keys,{prompt: true},{ class: "new-content-form"}
         %br/
 
 
@@ -68,21 +68,21 @@
         = f.label :shipping_costs,"配送料の負担", class: "new-content-title"
         = render partial:'req' 
         %br/
-        = f.select :shipping_costs, Item.shipping_costs.keys,{},{ class: "new-content-form"}
+        = f.select :shipping_costs, Item.shipping_costs.keys,{prompt: true},{ class: "new-content-form"}
         %br/
 
       .new-content
         = f.label :shipping_from,"発送元の地域", class: "new-content-title"
         = render partial:'req' 
         %br/
-        = f.select :shipping_from, Item.shipping_froms.keys,{},{ class: "new-content-form"}
+        = f.select :shipping_from, Item.shipping_froms.keys,{prompt: true},{ class: "new-content-form"}
         %br/
 
       .new-content
         = f.label :shipping_date,"発送までの日数", class: "new-content-title"
         = render partial:'req' 
         %br/
-        = f.select :shipping_date, Item.shipping_dates.keys,{},{ class: "new-content-form"}
+        = f.select :shipping_date, Item.shipping_dates.keys,{prompt: true},{ class: "new-content-form"}
         %br/
 
 
@@ -93,7 +93,7 @@
           .box
             = f.label :price,"販売価格", class: "new-content-title"
             = render partial:'req' 
-          = f.text_field :price, placeholder: "値段", class: "new-content-form-price"
+          = f.text_field :price, placeholder: "0", class: "new-content-form-price"
       .price-box
         %p 販売手数料（10%）
         %p.right-content
