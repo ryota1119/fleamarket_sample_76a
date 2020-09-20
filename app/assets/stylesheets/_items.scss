@@ -359,7 +359,12 @@ body {
 }
 
 
-/*------------------------------*/
+// ----------------------------items/new.html.haml----------------------------
+
+.alert-danger {
+   color: red;
+   text-align: center;
+}
 
 .sell-item__wrapper {
     width: 700px;
