@@ -10,4 +10,6 @@ class User < ApplicationRecord
   validates :email, presence: true, 
             uniqueness:true, length:{ maximum: 255 }, 
             format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i, message: "is must NOT contain any other characters than alphanumerics." }      
+  has_one :address
 end
+

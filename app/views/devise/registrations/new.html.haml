@@ -5,7 +5,7 @@
   .sessions__container
     %h2.sessions__container__top 新規会員登録
     .sessions__container__form
-      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      = form_for(@user, url: registration_path(resource_name)) do |f|
         = render "devise/shared/error_messages", resource: resource
 
         .field.sessions__container__form__box
@@ -65,7 +65,7 @@
           != sprintf(f.date_select(:birthday, prefix:'user', with_css_classes:'XXXXX', prompt:"--",use_month_numbers:true, start_year:Time.now.year, end_year:1900, date_separator:'%s'),'年','月')+'日'
 
         .actions.sessions__container__form__box
-          = f.submit "次へ",class:"sessions__container__form__box__submit", url: "address_path"
+          = f.submit "次へ",class:"sessions__container__form__box__submit", url: "addresses_path"
 
       = render "devise/shared/links"
 
