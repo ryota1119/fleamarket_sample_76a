@@ -3,8 +3,8 @@ require 'rails_helper'
 describe User do
   describe '#create' do
     it "nickname、email、password、password_confirmation、first_name,last_name、first_name_kana、last_name_kana、birthdayがないと登録できないこと" do
+      binding.pry
       user = build(:user)
-      user.valid?
       expect(user).to be_valid?
     end
     it "nicknameがないと登録できないこと" do
