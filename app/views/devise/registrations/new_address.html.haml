@@ -8,6 +8,7 @@
     %h2.address__top 個人情報入力
     .address__form
       = form_for(@address, url: addresses_path) do |f|
+        = render "devise/shared/error_messages", resource: @address
         .address__form__box
           = f.label :postal_code, "郵便番号", class: "address__form__box__title"
           %span.address__form__box__title__req 必須
