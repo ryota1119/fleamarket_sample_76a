@@ -6,6 +6,7 @@
     %p.new-content-max-images 最大１０枚までアップロードできます
     = form.fields_for :images do |image|
       %div{data: {index: image.index}, class: 'js-file_group'}
+        = image_tag @item.images[0].src.url, alt: '', height: '', width: '', class: ''
         = image.file_field :src, class: 'new-content-form-area-hidden js-file'
         <br>
         %span.js-remove 削除

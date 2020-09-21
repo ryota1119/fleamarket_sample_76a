@@ -1,5 +1,7 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:edit, :update]
+  before_action :show_all_instance, only: [:show, :edit, :destroy]
+  before_action :category_parent_array, only: [:new, :create, :edit]
 
   def index
   end
@@ -7,12 +9,10 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.images.new
-    @category_parent_array = Category.where(ancestry: nil).pluck(:name).unshift("---")
   end
 
   def create
     @item = Item.new(item_params)
-    @category_parent_array = Category.where(ancestry: nil).pluck(:name).unshift("---")
     if @item.save
       redirect_to root_path
     else
@@ -22,9 +22,9 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @image = Item.find(params[:id])
     grandchild_category = @item.category
     child_category = grandchild_category.parent
-    @category_parent_array = Category.where(ancestry: nil).pluck(:name)
     @category_children_array = Category.where(ancestry: child_category.ancestry)
     @category_grandchildren_array = Category.where(ancestry: grandchild_category.ancestry)
   end
@@ -67,14 +67,23 @@ class ItemsController < ApplicationController
   private
   
   def item_params
-    params.require(:item).permit(:name, :description, :brand, :condition, :status, :shipping_costs, :shipping_from, :shipping_date, :price, :category_id, images_attributes: [:src])
-  end
-
-  def update_image_params
     params.require(:item).permit(:name, :description, :brand, :condition, :status, :shipping_costs, :shipping_from, :shipping_date, :price, :category_id, images_attributes: [:src, :_destroy, :id])
   end
 
   def set_item
     @item = Item.find(params[:id])
+  end
+
+  def show_all_instance
+    @images = Image.where(item_id: params[:id])
+    @images_first = Image.where(item_id: params[:id]).first
+    @category_id = @item.category_id
+    @category_parent = Category.find(@category_id).parent.parent                    
+    @category_child = Category.find(@category_id).parent
+    @category_grandchild = Category.find(@category_id)
+  end
+
+  def category_parent_array
+    @category_parent_array = Category.where(ancestry: nil).pluck(:name).unshift("---")
   end
 end
