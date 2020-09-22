@@ -77,7 +77,7 @@ describe Item do
       item = build(:item)
       item[:category_id] = nil
       item.valid?
-      expect(item.errors[:category_id]).to include(I18n.t('errors.messages.blank'))
+      expect(item.errors[:category]).to include(I18n.t('errors.messages.blank'))
     end
 
     let(:src) { File.join(Rails.root, 'spec/factories/test.jpg') }
