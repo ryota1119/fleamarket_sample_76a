@@ -76,7 +76,7 @@
         = f.label :shipping_from,"発送元の地域", class: "new-content-title"
         = render partial:'req' 
         %br/
-        = f.select :shipping_from, Item.shipping_froms.keys,{prompt: true},{ class: "new-content-form"}
+        = f.select :shipping_from, Item.shipping_froms.keys,{},{ class: "new-content-form"}
         %br/
 
       .new-content

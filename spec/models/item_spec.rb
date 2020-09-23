@@ -82,7 +82,7 @@ describe Item do
 
     let(:src) { File.join(Rails.root, 'spec/factories/test.jpg') }
     let(:image) { Rack::Test::UploadedFile.new(src) }
-      it "name,description,brand,condition,status,shipping_costs,shipping_from,shipping_date,aが存在すれば登録できること" do
+      it "name,description,brand,condition,status,shipping_costs,shipping_from,shipping_date,image,category_idが存在すれば登録できること" do
         item = build(:item)
         expect(item).to be_valid
       end
