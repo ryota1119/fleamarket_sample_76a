@@ -48,7 +48,7 @@ gem 'carrierwave'
 
 gem 'mini_magick'
 
-gem 'rails-i18n'
+gem 'rails-i18n', '~> 5.1'
 
 
 group :development, :test do
@@ -62,7 +62,7 @@ group :development, :test do
   gem 'capistrano3-unicorn'
   gem 'capistrano-rails-console'
   gem 'rspec-rails'
-  gem 'factory_bot_rails'
+  gem 'factory_bot_rails','5.2.0'
 end
 
 group :development do
