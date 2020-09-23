@@ -48,6 +48,8 @@ gem 'carrierwave'
 
 gem 'mini_magick'
 
+gem 'rails-i18n', '~> 5.1'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -60,7 +62,7 @@ group :development, :test do
   gem 'capistrano3-unicorn'
   gem 'capistrano-rails-console'
   gem 'rspec-rails'
-  gem 'factory_bot_rails'
+  gem 'factory_bot_rails','5.2.0'
 end
 
 group :development do

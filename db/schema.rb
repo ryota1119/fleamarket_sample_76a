@@ -10,10 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_04_130007) do
+ActiveRecord::Schema.define(version: 2020_09_20_095151) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "postal_code", null: false
     t.string "prefecturs", null: false
     t.string "municipalities", null: false
     t.string "block_number", null: false
@@ -22,6 +21,7 @@ ActiveRecord::Schema.define(version: 2020_09_04_130007) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "postal_code"
     t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 
@@ -53,15 +53,14 @@ ActiveRecord::Schema.define(version: 2020_09_04_130007) do
     t.integer "shipping_from", default: 1, null: false
     t.integer "shipping_date", default: 1, null: false
     t.integer "price", default: 0, null: false
-    t.bigint "category_id"
+    t.bigint "category_id", null: false
     t.index ["category_id"], name: "index_items_on_category_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
     t.string "email", null: false
-    t.string "password", null: false
-    t.string "password_conform", null: false
+    t.string "encrypted_password", null: false
     t.string "first_name", null: false
     t.string "last_name", null: false
     t.string "first_name_kana", null: false
