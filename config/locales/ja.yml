@@ -1,6 +1,18 @@
----
 ja:
   activerecord:
+    models:
+      item:  商品
+    attributes:
+      item:
+        name: 商品名
+        description: 商品の説明
+        category: カテゴリー
+        condition: 状態
+        shipping_costs: 配送料の負担
+        shipping_from: 発送元の地域
+        shipping_date: 発送までの日数
+        price: 販売価格
+        images: 画像
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
@@ -31,3 +43,4 @@ ja:
       long: "%Y年%m月%d日(%a) %H時%M分%S秒 %Z"
     am: "午前"
     pm: "午後"
+
