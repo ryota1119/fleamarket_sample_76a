@@ -10,5 +10,6 @@ class User < ApplicationRecord
   validates :email, uniqueness:true, length:{ maximum: 255 }, 
             format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i, message: "に使えない文字が入っています。" }      
   has_one :address
+  has_many :items
 end
 
