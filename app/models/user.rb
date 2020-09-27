@@ -15,4 +15,5 @@ class User < ApplicationRecord
             format: { with: /\A[A-Z\p{Katakana}]+\z/, message: "は英大文字かカタカナのみです。"}     
   validates :birthday, presence: true
   has_one :address
+  has_many :items
 end

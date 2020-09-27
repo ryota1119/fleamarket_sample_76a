@@ -359,7 +359,16 @@ body {
 }
 
 
-/*------------------------------*/
+// ----------------------------items/new.html.haml----------------------------
+
+.field_with_errors {
+    display: contents;
+  }
+
+.alert-danger {
+   color: red;
+   text-align: center;
+}
 
 .sell-item__wrapper {
     width: 700px;
