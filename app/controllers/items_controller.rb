@@ -8,7 +8,7 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    @item.images.new
+    @item.images.build
   end
 
   def create
@@ -40,6 +40,7 @@ class ItemsController < ApplicationController
       end
       ids = Image.where(item_id: params[:id]).map{|image| image.id }
       delete__db = ids - exit_ids
+      binding.pry
       Image.where(id:delete__db).destroy_all
       @item.touch
       if @item.update(item_params)
@@ -51,9 +52,9 @@ class ItemsController < ApplicationController
     end
   end
 
-  def update_done
-    @item_update = Item.order("updated_at DESC").first
-  end
+  # def update_done
+  #   @item_update = Item.order("updated_at DESC").first
+  # end
   
   def show
     @item = Item.find(params[:id])
@@ -75,7 +76,7 @@ class ItemsController < ApplicationController
   private
   
   def item_params
-    params.require(:item).permit(:name, :description, :brand, :condition, :status, :shipping_costs, :shipping_from, :shipping_date, :price, :category_id, images_attributes: [:src]).merge(user_id: current_user.id)
+    params.require(:item).permit(:name, :description, :brand, :condition, :status, :shipping_costs, :shipping_from, :shipping_date, :price, :category_id, images_attributes: [:src, :_destroy, :id]).merge(user_id: current_user.id)
   end
 
   def set_item
@@ -83,6 +84,7 @@ class ItemsController < ApplicationController
   end
 
   def show_all_instance
+    @user = User.find(@item.user_id)
     @images = Image.where(item_id: params[:id])
     @images_first = Image.where(item_id: params[:id]).first
     @category_id = @item.category_id
