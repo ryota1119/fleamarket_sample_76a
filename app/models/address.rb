@@ -1,6 +1,6 @@
 class Address < ApplicationRecord
   belongs_to :user, optional: true
-  validates :postal_code, :prefecturs, :municipalities, :block_number, :building_name, :phone_number, presence: true
+  validates :postal_code, :prefecturs, :municipalities, :block_number, :phone_number, presence: true
 
   enum prefecturs:{
     北海道:1,青森県:2,岩手県:3,宮城県:4,秋田県:5,山形県:6,福島県:7,
