@@ -1,5 +1,6 @@
 class Item < ApplicationRecord
   belongs_to :category
+  belongs_to :user
   has_many :images
   accepts_nested_attributes_for :images, allow_destroy: true
   with_options presence: true do
@@ -10,8 +11,7 @@ class Item < ApplicationRecord
     validates :shipping_costs
     validates :shipping_from
     validates :shipping_date
-    validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 }
-    validates :category_id
+    validates :price, numericality: { greater_than_or_equal_to: 300, less_than: 10000000 }
   end
   validates_associated :images
   validates :images, presence: true
