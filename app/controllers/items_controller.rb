@@ -54,6 +54,14 @@ class ItemsController < ApplicationController
   def update_done
     @item_update = Item.order("updated_at DESC").first
   end
+  
+  def show
+    @item = Item.find(params[:id])
+    @image = @item.images
+    @grand_child_category = @item.category
+    @child_category = @grand_child_category.parent
+    @parent_category = @child_category.parent
+  end
 
   def get_category_children
     @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
@@ -67,7 +75,7 @@ class ItemsController < ApplicationController
   private
   
   def item_params
-    params.require(:item).permit(:name, :description, :brand, :condition, :status, :shipping_costs, :shipping_from, :shipping_date, :price, :category_id, images_attributes: [:src, :_destroy, :id])
+    params.require(:item).permit(:name, :description, :brand, :condition, :status, :shipping_costs, :shipping_from, :shipping_date, :price, :category_id, images_attributes: [:src]).merge(user_id: current_user.id)
   end
 
   def set_item
