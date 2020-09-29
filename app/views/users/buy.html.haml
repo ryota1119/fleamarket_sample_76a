@@ -1,0 +1,37 @@
+%header.header
+  = render 'items/header'
+%body.purchase_confirmation
+  .purchase_confirmation__container
+    .purchase_confirmation__container__inner
+      .purchase_confirmation__container__inner__logo 購入内容の確認
+      .item_infomation
+        .item_infomation__image 
+          = image_tag @item.images[0].src.url, height: '100px', width: '100px'
+        .item_infomation__logo 
+          .item_infomation__logo_name 
+            = @item.name
+          .price 
+            .price_tax 送料込み(税込み)
+            .price_how_mach 
+              %span ¥
+              = @item.price
+      .payment_amount 
+        .payment_amount__logo 支払い金額
+        .payment_amount__price 
+          %span ¥
+          = @item.price
+      .how_to__pay 支払い方法
+      .shipping_address 配送先
+      = @address.postal_code
+      = @address.prefecturs
+      = @address.municipalities
+      = @address.block_number
+      - if @address.building_name == nil
+        = @user.first_name
+        = @user.last_name
+      - else
+        =@address.building_name
+        = @user.first_name
+        = @user.last_name
+      .purchase_confirmation__btn 購入する
+      

@@ -6,4 +6,10 @@ class UsersController < ApplicationController
 
   def destroy
   end
+
+  def buy
+    @user = User.find(params[:id])
+    @item = Item.find(params[:item_id])
+    @address = @user.address
+  end
 end
