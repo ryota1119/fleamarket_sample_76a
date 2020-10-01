@@ -1,60 +1,77 @@
-$(document).on('turbolinks:load', ()=> {
-  $(function() {
-    var file_field = document.querySelector('input[type=file]')
-    $('#img-file').change(function() {
-      var file = $('input[type="file"]').prop('files')[0];
-      var fileReader = new FileReader();
-      fileReader.onloadend = function() {
-        var src = fileReader.result
-        var html= `<img src="${src}" width="114" height="80">`
-        $('#image-box__container').before(html);
-      }
-      fileReader.readAsDataURL(file);
+$(document).on("click", ".image_upload", function () {
+  var preview = $(
+    `<div class="image-preview__wapper">
+      <img class="preview">
+      <div class="preview__btn">
+        <div class="preview__btn__delete">
+          削除
+        </div>
+      </div>
+    </div>`
+  );
+  var append_input = $(
+    `<li class="input">
+      <label class="upload-label">
+        <div class="upload-label__text">
+          <i class="fas fa-camera fa-2x"></i>
+          <div class="input-area">
+            <input class="hidden image_upload" type="file">
+          </div>
+        </div>
+      </label>
+    </li>`
+  );
+  $ul = $("#previews");
+  $li = $(this).parents("li");
+  $label = $(this).parents(".upload-label");
+  $inputs = $ul.find(".image_upload");
+  $(".image_upload").on("change", function (e) {
+    var reader = new FileReader();
+
+    reader.readAsDataURL(e.target.files[0]);
+
+    reader.onload = function (e) {
+      $(preview).find(".preview").attr("src", e.target.result);
+    };
+
+    $li.append(preview);
+
+    $label.css("display", "none");
+    $li.removeClass("input");
+    $li.addClass("image-preview");
+    $lis = $ul.find(".image-preview");
+
+    $("#previews li").css({
+      width: '124px',
     });
-  });
+    if ($lis.length <= 4) {
+      $ul.append(append_input);
+      $("#previews li:last-child").css({
+        width: `calc(100% - (20% * ${$lis.length}))`,
+      });
+    } else if ($lis.length == 5) {
+      $li.addClass("image-preview");
+      $ul.append(append_input);
+      $("#previews li:last-child").css({
+        width: `100%`,
+      });
+    } else if ($lis.length <= 9) {
+      $li.addClass("image-preview");
+      $ul.append(append_input);
+      $("#previews li:last-child").css({
+        width: `calc(100% - (20% * (${$lis.length} - 5 )))`,
+      });
+    }
 
-  var html= `<div class='item-image' data-image="${file.name}">
-              <div class=' item-image__content'>
-                <div class='item-image__content--icon'>
-                  <img src=${src} width="114" height="80" >
-                </div>
-              </div>
-              <div class='item-image__operetion'>
-                <div class='item-image__operetion--delete'>削除</div>
-              </div>
-            </div>`
-
-  $(document).on("click", '.item-image__operetion--delete', function(){
-    var target_image = $(this).parent().parent()
-    target_image.remove();
-    file_field.val("")
-  })
-  
-  // 画像用のinputを生成する関数
-  // const buildFileField = (index)=> {
-  //   const html = `<div data-index="${index}" class="js-file_group">
-  //                   <input class="js-file" type="file"
-  //                   name="item[images_attributes][${index}][src]"
-  //                   id="item_images_attributes_${index}_src"><br>
-  //                   <div class="js-remove">削除</div>
-  //                 </div>`;
-  //   return html;
-  // }
-
-  // file_fieldのnameに動的なindexをつける為の配列
-  let fileIndex = [1,2,3,4,5,6,7,8,9,10];
-
-  $('#image-box').on('change', '.js-file', function(e) {
-    // fileIndexの先頭の数字を使ってinputを作る
-    $('#image-box').append(buildFileField(fileIndex[0]));
-    fileIndex.shift();
-    // 末尾の数に1足した数を追加する
-    fileIndex.push(fileIndex[fileIndex.length - 1] + 1)
-  });
-
-  $('#image-box').on('click', '.js-remove', function() {
-    $(this).parent().remove();
-    // 画像入力欄が0個にならないようにしておく
-    if ($('.js-file').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
+    //inputの最後の"data-image"を取得して、input nameの番号を更新させてる。
+    $inputs.each(function (num, input) {
+      //nameの番号を更新するために、現在の番号を除去
+      $(input).removeAttr("name");
+      $(input).attr({
+        name: "product[images_attributes][" + num + "][name]",
+        id: "product_images_attributes_" + num + "_name",
+      });
+    });
+    console.log($inputs);
   });
 });

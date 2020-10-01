@@ -15,19 +15,18 @@
         = f.label :name,"出品画像", class: "new-content-title"
         = render partial:'req' 
         %p.new-content-max-images 最大１０枚までアップロードできます
-        .dropbox
-          %label.dropbox__img
-            = f.fields_for :images do |img|
-              .clearfix
-                %ul#previews
-                  %li.input
-                    %label.upload-label
-                      .upload-label__text
-                        ドラッグアンドドロップ
-                        %br
-                        またはクリックしてファイルをアップロード
-                        .input-area
-                          = img.file_field :src, id: "sell-img"
+        = f.fields_for :images do |image|
+          .box_wrap
+            %ul#previews
+              %li.input
+                = image.label :src, class: "upload-label", for: "upload-image__btn" do
+                  .upload-label__text
+                    %i.fas.fa-camera.fa-lg
+                    ドラッグアンドドロップ
+                    %br
+                    またはクリックしてファイルをアップロード
+                    .input-area
+                      = image.file_field :name, id: "upload-image__btn", class: "hidden image_upload"
     .form-container
       .new-content
         = f.label :name,"商品名", class: "new-content-title"
