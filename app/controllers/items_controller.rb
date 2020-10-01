@@ -27,6 +27,10 @@ class ItemsController < ApplicationController
     @parent_category = @child_category.parent
   end
 
+  def delete
+    @item.destroy
+    redirect_to root_path
+
   def get_category_children
     @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
   end
