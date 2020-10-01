@@ -1,71 +1,103 @@
+$padding_set: 32px 16px;
+$height: 100vh;
+$margin_center: 0 auto;
+$blod_font: bold;
+$normal_font: normal;
+$border_solid: 1px solid;
+$half_width: calc(100%/2);
+$display_flex: flex;
+$white: #F8F8F8;
+$text_align: center;
+$display_between: space-between;
+$font_14: 14px;
 .purchase_confirmation {
   color: #333333;
   width: 100%;
-  height: 100vh;
+  height: $height;
   &__container {
-    width: calc(100%/2);
-    height: 100vh;
-    margin: 0 auto;
-    background-color: #F8F8F8;
+    width: $half_width;
+    height: $height;
+    margin: $margin_center;
+    background-color: $white;
     &__inner {
-      width: calc(100%/2);
-      height: 100vh;
-      margin: 0 auto;
-      font-weight: bold;
+      width: $half_width;
+      height: $height;
+      margin: $margin_center;
+      font-weight: $blod_font;
       &__logo{
         font-size: 24px;
-        font-weight: bold;
-        text-align: center;
-        padding: 32px 16px;
-        border-bottom: 1px solid;
+        font-weight: $blod_font;
+        text-align: $text_align;
+        padding: $padding_set;
+        border-bottom: $border_solid;
       }
       .item_infomation {
         font-size: 18px;
-        display: flex;
+        display: $display_flex;
         justify-content: start;
-        padding: 32px 16px;
-        border-bottom: 1px solid;
+        padding: $padding_set;
+        border-bottom: $border_solid;
         &__image {
-          display: inline-block;
-          color: blue;
           margin-right: 50px;
         }
         &__logo{
-          font-size: 14px;
-          font-weight: normal;
+          font-size: $font_14;
+          font-weight: $normal_font;
           .price {
-            display: flex;
+            display: $display_flex;
             justify-content: end;
             &_tax {
               margin-right: 10px;
               font-size: 12px;
             }
             &_how_mach {
-              font-size: 14px;
-              font-weight: bold;
+              font-size: $font_14;
+              font-weight: $blod_font;
             }
           }
         }
       }
       .payment_amount {
-        padding: 32px 16px;
-        border-bottom: 1px solid;
-        display: flex;
-        justify-content: space-between;
+        padding: $padding_set;
+        border-bottom: $border_solid;
+        display: $display_flex;
+        justify-content: $display_between;
       }
-      .how_to__pay {
-        padding: 32px 16px;
-        font-size: 14px;
-        border-bottom: 1px solid;
+      .how_to_pay {
+        padding: $padding_set;
+        border-bottom: $border_solid;
+        &__type {
+          font-size: $font_14;
+          margin-top: 10px;
+          .credit_card {
+            &__number {
+              font-weight: $normal_font;
+            }
+            &__limit {
+              font-weight: $normal_font;
+            }
+          }
+        }
       }
       .shipping_address {
-        padding: 32px 16px;
-        font-size: 14px;
-        border-bottom: 1px solid;
+        display: $display_flex;
+        justify-content: $display_between;
+        padding: $padding_set;
+        border-bottom: $border_solid;
+        &__detail{
+          font-size: $font_14;
+          font-weight: $normal_font;
+        }
       }
       .purchase_confirmation__btn {
-        text-align: center;
-        padding: 32px 16px;
+        padding: $padding_set;
+        text-align: $text_align;
+        &_submit {
+          padding: 5px 20px;
+          background-color: darkturquoise;
+          color: $white;
+          border: none;
+        }
       }
     }
   }
