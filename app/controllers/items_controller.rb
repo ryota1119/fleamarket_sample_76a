@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:edit, :update]
+  before_action :set_item, only: [:edit, :update, :show]
   before_action :show_all_instance, only: [:show, :edit, :destroy]
   before_action :category_parent_array, only: [:new, :create, :edit]
 

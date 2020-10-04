@@ -63,13 +63,11 @@ $(document).on("click", ".image_upload", function () {
       });
     }
 
-    //inputの最後の"data-image"を取得して、input nameの番号を更新させてる。
     $inputs.each(function (num, input) {
-      //nameの番号を更新するために、現在の番号を除去
       $(input).removeAttr("name");
       $(input).attr({
-        name: "product[images_attributes][" + num + "][name]",
-        id: "product_images_attributes_" + num + "_name",
+        name: "item[images_attributes][" + num + "][src]",
+        id: "item_images_attributes_" + num + "_src",
       });
     });
   });
