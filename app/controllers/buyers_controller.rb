@@ -1,4 +1,5 @@
 class BuyersController < ApplicationController
+  require 'payjp'
   before_action :set_card, :set_item
 
   def index
