@@ -72,6 +72,53 @@ $(document).on("click", ".image_upload", function () {
         id: "product_images_attributes_" + num + "_name",
       });
     });
-    console.log($inputs);
   });
+
+});
+
+$(document).on('click','.preview__btn__delete',function(){
+  var append_input = $( 
+    `<li class="input">
+      <label class="upload-label">
+        <div class="upload-label__text">
+          <i class="fas fa-camera fa-2x"></i>
+          <div class="input-area">
+            <input class="hidden image_upload" type="file">
+          </div>
+        </div>
+      </label>
+    </li>`
+  );
+  $ul = $('#previews')
+  $lis = $ul.find('.image-preview');
+  $input = $ul.find('.input');
+  $ul = $('#previews')
+  $li = $(this).parents('.image-preview');
+
+  $li.remove();
+
+  $lis = $ul.find('.image-preview');
+  $label = $ul.find('.input');
+
+  if($lis.length <= 4 ){
+    $('#previews li:last-child').css({
+      'width': `calc(100% - (20% * ${$lis.length}))`
+    })
+  }
+  else if($lis.length == 5 ){
+    $('#previews li:last-child').css({
+      'width': `100%`
+    })
+  }
+  else if($lis.length < 9 ){
+    $('#previews li:last-child').css({
+      'width': `calc(100% - (20% * (${$lis.length} - 5 )))`
+    })
+  }
+  else if($lis.length == 9 ){
+    $ul.append(append_input)
+    $('#previews li:last-child').css({
+      'width': `calc(100% - (20% * (${$lis.length} - 5 )))`
+    })
+  }  
 });
