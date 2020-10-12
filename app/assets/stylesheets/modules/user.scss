@@ -1,6 +1,5 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// 新規会員登録ページ
+
 * {
     box-sizing: border-box;
 }
@@ -34,7 +33,7 @@
 .sessions__container {
     width: 700px;
     padding: 40px;
-    margin: 0 auto 30px;
+    margin: 30px auto 30px;
     background-color: #FFFFFF;
     border: 1px solid #f5f5f5;
     border-radius: 10px;

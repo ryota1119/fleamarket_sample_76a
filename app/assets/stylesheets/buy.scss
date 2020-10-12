@@ -4,7 +4,7 @@ $margin_center: 0 auto;
 $blod_font: bold;
 $normal_font: normal;
 $border_solid: 1px solid;
-$half_width: calc(100%/2);
+$half_width: calc(100% / 2);
 $display_flex: flex;
 $white: #F8F8F8;
 $text_align: center;
@@ -31,7 +31,7 @@ $font_14: 14px;
         padding: $padding_set;
         border-bottom: $border_solid;
       }
-      .item_infomation {
+      .item_information {
         font-size: 18px;
         display: $display_flex;
         justify-content: start;

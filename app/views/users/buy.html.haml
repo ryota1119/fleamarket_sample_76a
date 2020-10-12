@@ -4,11 +4,11 @@
   .purchase_confirmation__container
     .purchase_confirmation__container__inner
       .purchase_confirmation__container__inner__logo 購入内容の確認
-      .item_infomation
-        .item_infomation__image 
+      .item_information
+        .item_information__image 
           = image_tag @item.images[0].src.url, height: '100px', width: '100px'
-        .item_infomation__logo 
-          .item_infomation__logo_name 
+        .item_information__logo 
+          .item_information__logo_name 
             = @item.name
           .price 
             .price_tax 送料込み(税込み)
