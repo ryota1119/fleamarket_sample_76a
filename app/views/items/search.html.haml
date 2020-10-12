@@ -6,9 +6,9 @@
     %h3.search__main__content__ttl
       = "#{@keyword}の検索結果"
     %ul
-      - @item.each do |item|
+      - @items.each do |item|
         %li
-          = link_to "/items/#{item.id}", class: 'search__main__content__item'  do
+          = link_to item_path(item), class: 'search__main__content__item'  do
             = image_tag "#{item.images[0].src}", class: 'search__main__content__item__image'
             %p.search__main__content__item__name
               = item.name
