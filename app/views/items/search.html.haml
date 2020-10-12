@@ -5,7 +5,7 @@
   .search__main__content
     %h3.search__main__content__ttl
       = "#{@keyword}の検索結果"
-    %ul
+    %ul.search__main__content__ul
       - @items.each do |item|
         %li
           = link_to item_path(item), class: 'search__main__content__item'  do
