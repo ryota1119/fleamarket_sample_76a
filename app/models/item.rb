@@ -44,4 +44,8 @@ class Item < ApplicationRecord
     １週間以内: 4
   }
 
+  def self.search(search)
+    return Item.all unless search
+    Item.where('text LIKE(?)', "%#{search}%")
+  end
 end
