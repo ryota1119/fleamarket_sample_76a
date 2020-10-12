@@ -44,6 +44,10 @@ class ItemsController < ApplicationController
     @category_grandchildren = Category.find("#{params[:child_id]}").children
   end
 
+  def search
+    @item = Item.search(params[:keyword])
+  end
+
   def set_item
     @item = Item.find(params[:id])
   end
