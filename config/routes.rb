@@ -25,7 +25,8 @@ Rails.application.routes.draw do
   resources  :users, only: [:show, :destroy] do
     member do
       get :logout
-      get :credit
+      get :credit  
+      get :buy, to: 'users#buy'
     end
   end
 end
