@@ -499,3 +499,33 @@ body {
 .precautions {
     font-size: 12px;
 }
+
+// ----------------------------items/search.html.haml----------------------------
+
+.search__main {
+    .search__main__content {
+        width: 80%;
+        margin: 30px auto 30px;
+        .search__main__content__ttl {
+            color: gray;
+        }
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 10px;
+            li {
+                width: 20%;
+                background-color: #fff;
+                margin: 10px;
+                .search__main__content__item {
+                    text-decoration: none;
+                    text-align: center;
+                    color: #333;
+                    .search__main__content__item__image {
+                        margin: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
