@@ -45,7 +45,8 @@ class ItemsController < ApplicationController
   end
 
   def search
-    @item = Item.search(params[:keyword])
+    @item = Item.search(params[:keyword]).limit(40).order("created_at DESC")
+    @keyword = params[:keyword]
   end
 
   def set_item
