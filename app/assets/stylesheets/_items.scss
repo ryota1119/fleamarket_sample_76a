@@ -503,10 +503,10 @@ body {
 // ----------------------------items/search.html.haml----------------------------
 
 .search__main {
-    .search__main__content {
+    &__content {
         width: 80%;
         margin: 30px auto 30px;
-        .search__main__content__ttl {
+        &__ttl {
             color: gray;
         }
         ul {
@@ -517,13 +517,11 @@ body {
                 width: 20%;
                 background-color: #fff;
                 margin: 10px;
+                text-align: center;
                 .search__main__content__item {
                     text-decoration: none;
                     text-align: center;
                     color: #333;
-                    .search__main__content__item__image {
-                        margin: 20px;
-                    }
                 }
             }
         }
