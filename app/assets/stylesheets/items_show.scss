@@ -85,13 +85,17 @@ $color_white: #F8F8F8;
           &__container {
             margin: $container_center;
             width: $width_harf;
-            li ,a{
-              text-align: $item_center;
-              background-color: $thema_color;
-              padding: 10px;
-              text-decoration: $text-decoration;
-              color: $color_white;
-            }
+            ul{
+              li {
+                text-align: $item_center;
+                background-color: $thema_color;
+                padding: 10px;
+                a{
+                  text-decoration: $text-decoration;
+                  color: $color_white;
+                }
+              }
+            } 
           }
         }
       }
