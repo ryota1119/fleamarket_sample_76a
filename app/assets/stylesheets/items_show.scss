@@ -82,7 +82,7 @@ $color_white: #F8F8F8;
         &__btn{
           margin-top: $top_maragin;
           margin-bottom: 50px;
-          &__container {
+          &__container, ul {
             width: $width_harf;
             margin: $container_center;
             &__buy, &__edit, &__delete, li {
