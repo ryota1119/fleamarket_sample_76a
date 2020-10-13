@@ -82,17 +82,17 @@ $color_white: #F8F8F8;
         &__btn{
           margin-top: $top_maragin;
           margin-bottom: 50px;
-          &__container, ul{
-            margin: $container_center;
+          &__container {
             width: $width_harf;
-            li{
+            margin: $container_center;
+            &__buy, &__edit, &__delete, li {
               text-align: $item_center;
               background-color: $thema_color;
               padding: 10px;
               a {
                 text-decoration: $text-decoration;
                 color: $color_white;
-              } 
+              }
             }
           }
         }
