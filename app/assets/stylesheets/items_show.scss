@@ -85,6 +85,9 @@ $color_white: #F8F8F8;
           &__container {
             margin: $container_center;
             width: $width_harf;
+            & :hover {
+              background-color: #00ced1;
+            }
             ul{
               li {
                 text-align: $item_center;
