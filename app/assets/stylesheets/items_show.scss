@@ -89,14 +89,15 @@ $color_white: #F8F8F8;
               text-align: $item_center;
               background-color: $thema_color;
               padding: 10px;
-            }
-            a {
-              text-decoration: $text-decoration;
-              color: $color_white;
+              a {
+                text-decoration: $text-decoration;
+                color: $color_white;
+              }
             }
             & :hover {
               background-color: #00ced1;
             }
+
           }
         }
       }
