@@ -82,23 +82,18 @@ $color_white: #F8F8F8;
         &__btn{
           margin-top: $top_maragin;
           margin-bottom: 50px;
-          &__container {
+          &__container, ul{
             margin: $container_center;
             width: $width_harf;
-            & :hover {
-              background-color: #00ced1;
+            li{
+              text-align: $item_center;
+              background-color: $thema_color;
+              padding: 10px;
+              a {
+                text-decoration: $text-decoration;
+                color: $color_white;
+              } 
             }
-            ul{
-              li {
-                text-align: $item_center;
-                background-color: $thema_color;
-                padding: 10px;
-                a{
-                  text-decoration: $text-decoration;
-                  color: $color_white;
-                }
-              }
-            } 
           }
         }
       }
