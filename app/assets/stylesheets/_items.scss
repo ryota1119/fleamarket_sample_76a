@@ -372,8 +372,7 @@ body {
 
 .sell-item__wrapper {
     width: 700px;
-    margin: 0 auto;
-    margin-bottom: 50px;
+    margin: 30px auto 50px;
     background-color: #fff;
 }
 
@@ -499,4 +498,32 @@ body {
 
 .precautions {
     font-size: 12px;
+}
+
+// ----------------------------items/search.html.haml----------------------------
+
+.search__main {
+    &__content {
+        width: 80%;
+        margin: 30px auto 30px;
+        &__ttl {
+            color: gray;
+        }
+        &__ul {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 10px;
+            li {
+                width: 20%;
+                background-color: #fff;
+                margin: 10px;
+                text-align: center;
+                .search__main__content__item {
+                    text-decoration: none;
+                    text-align: center;
+                    color: #333;
+                }
+            }
+        }
+    }
 }
