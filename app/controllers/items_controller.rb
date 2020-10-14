@@ -22,7 +22,6 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @image = Item.find(params[:id])
     grandchild_category = @item.category
     child_category = grandchild_category.parent
     @category_children_array = Category.where(ancestry: child_category.ancestry)
@@ -30,25 +29,27 @@ class ItemsController < ApplicationController
   end
 
   def update
-    if item_params[:images_attributes].nil?
-      flash.now[:alert] = '更新できませんでした 【画像を１枚以上入れてください】'
-      render :edit
-    else
-      exit_ids = []
-      item_params[:images_attributes].each do |a,b|
-        exit_ids << item_params[:images_attributes].dig(:"#{a}",:id).to_i
-      end
-      ids = Image.where(item_id: params[:id]).map{|image| image.id }
-      delete__db = ids - exit_ids
-      binding.pry
-      Image.where(id:delete__db).destroy_all
-      @item.touch
-      if @item.update(item_params)
-        redirect_to  root_path
+    @parents = Category.where(ancestry: nil)
+    if params[:item].keys.include?("image") || params[:item].keys.include?("images_attributes") 
+      if @item.valid?
+        if params[:item].keys.include?("image") 
+          update_images_ids = params[:item][:image]
+          before_images_ids = @item.images.ids
+          before_images_ids.each do |before_img_id|
+            Image.find(before_img_id).destroy unless update_images_ids.include?("#{before_img_id}") 
+          end
+        else
+          before_images_ids.each do |before_img_id|
+            Image.find(before_img_id).destroy 
+          end
+        end
+        @item.update(item_params)
+        redirect_to item_path(@item), notice: "商品を更新しました"
       else
-        flash.now[:alert] = '更新できませんでした'
-        render :edit
+        render 'edit'
       end
+    else
+      redirect_back(fallback_location: root_path,flash: {success: '画像がありません'})
     end
   end
 

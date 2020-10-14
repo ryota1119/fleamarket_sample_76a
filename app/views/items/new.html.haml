@@ -15,9 +15,9 @@
         = f.label :name,"出品画像", class: "new-content-title"
         = render partial:'req' 
         %p.new-content-max-images 最大１０枚までアップロードできます
-        = f.fields_for :images do |image|
-          .box_wrap
-            %ul#previews
+        .box_wrap
+          %ul#previews
+            = f.fields_for :images do |image|
               %li.input
                 = image.label :src, class: "upload-label", for: "upload-image__btn" do
                   .upload-label__text

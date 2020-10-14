@@ -118,5 +118,5 @@ $(document).on('click','.preview__btn__delete',function(){
     $('#previews li:last-child').css({
       'width': `calc(100% - (20% * (${$lis.length} - 5 )))`
     })
-  }  
+  }
 });
