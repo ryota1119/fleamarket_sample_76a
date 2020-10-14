@@ -20,9 +20,11 @@
                   = image_tag image.src.url, height: '100px', width: '100px'
         .items__show__main__container__top__itemBox__price
           = "¥#{@item.price}"
-          %br (税込)送料込
+          %span (税込)送料込
         .items__show__main__container__top__itemBox__description
-          = @item.description
+          .logo 商品詳細
+          .text
+            = @item.description
         .items__show__main__container__top__itemBox__table
           %table
             %tbody
@@ -35,8 +37,10 @@
                 %td
                   = link_to(@parent_category.name, '#')
                   %br/
+                  %span >
                   = link_to(@child_category.name, '#')
                   %br/
+                  %span >
                   = link_to(@grand_child_category.name, '#')
               %tr
                 %th ブランド
@@ -74,9 +78,6 @@
     -#   コメントボックスを後に実装
     -# .items__show__main__container__relationItems
     -# 関連商品の表示機能を後に実装
-
-.app-banner
-  = render 'app-banner'
 
 %footer.footer
   = render 'footer'

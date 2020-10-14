@@ -92,19 +92,18 @@ $font_14: 14px;
         }
       }
       .purchase_confirmation__btn {
-          padding: $padding_set;
-          text-align: $text_align;
-          &_submit {
-            padding: 5px 20px;
-            background-color: darkturquoise;
-            color: $white;
-            border: none;
-          }
+        padding: $padding_set;
+        text-align: $text_align;
+        &_submit {
+          padding: 5px 20px;
+          background-color: darkturquoise;
+          color: $white;
+          border: none;
+        }
       }
     }
   }
 }
-
 
 // buyers/done
 
