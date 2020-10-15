@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:edit, :update, :show]
-  before_action :show_all_instance, only: [:show, :edit, :destroy]
-  before_action :category_parent_array, only: [:new, :create, :edit]
+  before_action :show_all_instance, only: [:show, :edit, :update, :destroy]
+  before_action :category_parent_array, only: [:new, :create, :edit, :update]
 
   def index
   end
@@ -32,15 +32,17 @@ class ItemsController < ApplicationController
     @parents = Category.where(ancestry: nil)
     if params[:item].keys.include?("image") || params[:item].keys.include?("images_attributes") 
       if @item.valid?
-        if params[:item].keys.include?("image") 
-          update_images_ids = params[:item][:image]
+        if params[:item].keys.include?("images_attributes")
+          binding.pry
+          update_images_ids = params[:item][:images_attributes].values
           before_images_ids = @item.images.ids
           before_images_ids.each do |before_img_id|
             Image.find(before_img_id).destroy unless update_images_ids.include?("#{before_img_id}") 
           end
         else
+          before_images_ids = @item.images.ids
           before_images_ids.each do |before_img_id|
-            Image.find(before_img_id).destroy 
+            Image.find(before_img_id).destroy
           end
         end
         @item.update(item_params)
@@ -53,10 +55,6 @@ class ItemsController < ApplicationController
     end
   end
 
-  # def update_done
-  #   @item_update = Item.order("updated_at DESC").first
-  # end
-  
   def show
     @item = Item.find(params[:id])
     @image = @item.images
