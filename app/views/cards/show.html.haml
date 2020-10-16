@@ -18,8 +18,8 @@
     = form_tag(card_path(current_user.id), method: :delete, id: 'charge-form',  name: "inputForm") do
       %input{ type: "hidden", name: "card_id", value: "" }
       %button.delete-btn カード情報を削除する
-    .purchase_confirm__link
-      = link_to '購入画面へ進む', item_buyers_path(@item), class: 'purchase_confirm__link-btn'
+      -# .purchase_confirm__link
+      -#   = link_to '購入画面へ進む', item_buyers_path(@item), class: 'purchase_confirm__link-btn'
 
 %footer.footer
   = render 'items/footer'
