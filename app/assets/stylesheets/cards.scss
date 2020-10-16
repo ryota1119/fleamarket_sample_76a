@@ -1,3 +1,5 @@
+// cards.new
+
 .card__main {
   width: 60%;
   height: 50vh;
@@ -6,5 +8,34 @@
   .signup-card-list {
     display: flex;
     padding-top: 20px;
+  }
+}
+
+// cards.show
+.cards_form-content {
+  text-align: center;
+  padding: 50px;
+  font-size: 20px;
+  color: #333;
+  &__heading {
+    font-size: 30px;
+  }
+  .delete-btn {
+    margin: 30px 0 80px;
+    background-color: darkturquoise;
+    color: #fff;
+    border: none;
+    font-size: 20px;
+  }
+  .purchase_confirm__link {
+    margin: 50px 0 10px;
+    padding: 5px 20px;
+    background-color: darkturquoise;
+    border: none;
+    display: inline;
+    &-btn {
+      text-decoration: none;
+      color: #fff;
+    }
   }
 }

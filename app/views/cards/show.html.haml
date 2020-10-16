@@ -1,11 +1,25 @@
-クレジットカード情報
-.cards_form-content
-  %br
-  = "**** **** **** " + @default_card_information.last4
-  %br
-  - exp_month = @default_card_information.exp_month.to_s
-  - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
-  = exp_month + " / " + exp_year
-  = form_tag(card_path(current_user.id), method: :delete, id: 'charge-form',  name: "inputForm") do
-    %input{ type: "hidden", name: "card_id", value: "" }
-    %button.delete-btn 削除する
+%header.header
+  = render 'items/header'
+
+.card__main
+  .cards_form-content
+    %h2.cards_form-content__heading
+      クレジットカード情報
+    %br
+    カード番号
+    %br
+    = "**** **** **** " + @default_card_information.last4
+    %br
+    有効期限
+    %br
+    - exp_month = @default_card_information.exp_month.to_s
+    - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+    = exp_month + " / " + exp_year
+    = form_tag(card_path(current_user.id), method: :delete, id: 'charge-form',  name: "inputForm") do
+      %input{ type: "hidden", name: "card_id", value: "" }
+      %button.delete-btn カード情報を削除する
+    .purchase_confirm__link
+      = link_to '購入画面へ進む', item_buyers_path(@item), class: 'purchase_confirm__link-btn'
+
+%footer.footer
+  = render 'items/footer'
