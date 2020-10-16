@@ -1,3 +1,5 @@
+// buyers/index
+
 $padding_set: 32px 16px;
 $height: 100vh;
 $margin_center: 0 auto;
@@ -94,7 +96,7 @@ $font_14: 14px;
         text-align: $text_align;
         &_submit {
           padding: 5px 20px;
-          background-color: cyan;
+          background-color: darkturquoise;
           color: $white;
           border: none;
         }
@@ -103,4 +105,26 @@ $font_14: 14px;
   }
 }
 
+// buyers/done
 
+.buy-content {
+  width: 50vh;
+  height: 55vh;
+  margin: 20px auto 20px; 
+  background-color: #fff;
+  text-align: center;
+  padding: 40px;
+  .buy-content__item {
+    padding: 40px 0 10px;
+    .buy-content__user-info__submit {
+      margin: 50px 0 10px;
+      padding: 5px 20px;
+      background-color: darkturquoise;
+      border: none;
+      &__button {
+        text-decoration: none;
+        color: $white;
+      }
+    }
+  }
+}
