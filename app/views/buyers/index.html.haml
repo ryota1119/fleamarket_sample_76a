@@ -47,13 +47,13 @@
             = @address.block_number
             - if @address.building_name == nil
               .user_name
-              = @user.first_name
-              = @user.last_name
+              = current_user.first_name
+              = current_user.last_name
             - else 
               = @address.building_name
               .user_name
-              = @user.first_name
-              = @user.last_name
+              = current_user.first_name
+              = current_user.last_name
       .purchase_confirmation__btn
         = form_tag(action: :pay, method: :post) do
           %button.purchase_confirmation__btn_submit{type:"submit"} 購入する

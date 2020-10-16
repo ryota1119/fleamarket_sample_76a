@@ -3,8 +3,7 @@ class BuyersController < ApplicationController
   before_action :set_card, :set_item
 
   def index
-    @user = User.find(current_user.id)
-    @address = @user.address
+    @address = current_user.address
     if @card.blank?
       #登録された情報がない場合にカード登録画面に移動
       redirect_to new_card_path
