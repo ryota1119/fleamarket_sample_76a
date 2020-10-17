@@ -26,16 +26,16 @@
   .new-content
     = form.label :name,"商品名", class: "new-content-title"
     = render partial:'req' 
-    <br>
+    %br
     = form.text_field :name, placeholder: "商品名を入力してください", class: "new-content-form"
-    <br>
+    %br
 
   .new-content
     = form.label :description,"商品の説明", class: "new-content-title"
     = render partial:'req' 
-    <br>
+    %br
     = form.text_area :description, placeholder: "(必須　1,000文字以内)（色、素材、重さ、定価、注意点など）  (例）2010年頃に１万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", class: "new-content-form-area"
-    <br>
+    %br
 
 
 .form-container
@@ -56,16 +56,16 @@
   .new-content
     = form.label :brand,"ブランド", class: "new-content-title"
     = render partial:'any'
-    <br>
+    %br
     = form.text_field :brand, placeholder: "ブランド", class: "new-content-form"
-    <br>
+    %br
 
   .new-content
     = form.label :condition,"状態", class: "new-content-title"
     = render partial:'req' 
-    <br>
+    %br
     = form.select :condition, Item.conditions.keys,{},{ class: "new-content-form"}
-    <br>
+    %br
 
 
 .form-container
@@ -73,23 +73,23 @@
   .new-content
     = form.label :shipping_costs,"配送料の負担", class: "new-content-title"
     = render partial:'req' 
-    <br>
+    %br
     = form.select :shipping_costs, Item.shipping_costs.keys,{},{ class: "new-content-form"}
-    <br>
+    %br
 
   .new-content
     = form.label :shipping_from,"発送元の地域", class: "new-content-title"
     = render partial:'req' 
-    <br>
+    %br
     = form.select :shipping_from, Item.shipping_froms.keys,{},{ class: "new-content-form"}
-    <br>
+    %br
 
   .new-content
     = form.label :shipping_date,"発送までの日数", class: "new-content-title"
     = render partial:'req' 
-    <br>
+    %br
     = form.select :shipping_date, Item.shipping_dates.keys,{},{ class: "new-content-form"}
-    <br>
+    %br
 
 
 .form-container
