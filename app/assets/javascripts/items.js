@@ -1,29 +1,126 @@
-$(document).on('turbolinks:load', ()=> {
-  // 画像用のinputを生成する関数
-  const buildFileField = (index)=> {
-    const html = `<div data-index="${index}" class="js-file_group">
-                    <input class="js-file" type="file"
-                    name="item[images_attributes][${index}][src]"
-                    id="item_images_attributes_${index}_src"><br>
-                    <div class="js-remove">削除</div>
-                  </div>`;
-    return html;
+$(document).on("click", ".image_upload", function () {
+  var preview = $(
+    `<div class="image-preview__wapper">
+      <img class="preview">
+      <div class="preview__btn">
+        <div class="preview__btn__delete">
+          削除
+        </div>
+      </div>
+    </div>`
+  );
+  var append_input = $(
+    `<li class="input">
+      <label class="upload-label">
+        <div class="upload-label__text">
+          <i class="fas fa-camera fa-2x"></i>
+          <div class="input-area">
+            <input class="hidden image_upload" type="file">
+          </div>
+        </div>
+      </label>
+    </li>`
+  );
+  $ul = $("#previews");
+  $li = $(this).parents("li");
+  $label = $(this).parents(".upload-label");
+  $inputs = $ul.find(".image_upload");
+  $(".image_upload").on("change", function (e) {
+    var reader = new FileReader();
+
+    reader.readAsDataURL(e.target.files[0]);
+
+    reader.onload = function (e) {
+      $(preview).find(".preview").attr("src", e.target.result);
+    };
+
+    $li.append(preview);
+
+    $label.css("display", "none");
+    $li.removeClass("input");
+    $li.addClass("image-preview");
+    $lis = $ul.find(".image-preview");
+
+    $("#previews li").css({
+      width: '124px',
+    });
+    if ($lis.length <= 4) {
+      $ul.append(append_input);
+      $("#previews li:last-child").css({
+        width: `calc(100% - (20% * ${$lis.length}))`,
+      });
+    } else if ($lis.length == 5) {
+      $li.addClass("image-preview");
+      $ul.append(append_input);
+      $("#previews li:last-child").css({
+        width: `100%`,
+      });
+    } else if ($lis.length <= 9) {
+      $li.addClass("image-preview");
+      $ul.append(append_input);
+      $("#previews li:last-child").css({
+        width: `calc(100% - (20% * (${$lis.length} - 5 )))`,
+      });
+    }
+
+    $inputs.each(function (num, input) {
+      $(input).removeAttr("name");
+      $(input).attr({
+        name: "item[images_attributes][" + num + "][src]",
+        id: "item_images_attributes_" + num + "_src",
+      });
+    });
+  });
+
+});
+
+$(document).on('click','.preview__btn__delete',function(){
+  var append_input = $( 
+    `<li class="input">
+      <label class="upload-label">
+        <div class="upload-label__text">
+          <i class="fas fa-camera fa-2x"></i>
+          <div class="input-area">
+            <input class="hidden image_upload" type="file">
+          </div>
+        </div>
+      </label>
+    </li>`
+  );
+  $ul = $('#previews')
+  $lis = $ul.find('.image-preview');
+  $input = $ul.find('.input');
+  $ul = $('#previews')
+  $li = $(this).parents('.image-preview');
+
+  $li.remove();
+
+  $delete_input = $(this).parents(".image-preview__wapper").data("index");
+  $document = document.getElementById(`item_images_attributes_${$delete_input}_id`);
+  $document.remove();
+
+  $lis = $ul.find('.image-preview');
+  $label = $ul.find('.input');
+
+  if($lis.length <= 4 ){
+    $('#previews li:last-child').css({
+      'width': `calc(100% - (20% * ${$lis.length}))`
+    })
   }
-
-  // file_fieldのnameに動的なindexをつける為の配列
-  let fileIndex = [1,2,3,4,5,6,7,8,9,10];
-
-  $('#image-box').on('change', '.js-file', function(e) {
-    // fileIndexの先頭の数字を使ってinputを作る
-    $('#image-box').append(buildFileField(fileIndex[0]));
-    fileIndex.shift();
-    // 末尾の数に1足した数を追加する
-    fileIndex.push(fileIndex[fileIndex.length - 1] + 1)
-  });
-
-  $('#image-box').on('click', '.js-remove', function() {
-    $(this).parent().remove();
-    // 画像入力欄が0個にならないようにしておく
-    if ($('.js-file').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
-  });
+  else if($lis.length == 5 ){
+    $('#previews li:last-child').css({
+      'width': `100%`
+    })
+  }
+  else if($lis.length < 9 ){
+    $('#previews li:last-child').css({
+      'width': `calc(100% - (20% * (${$lis.length} - 5 )))`
+    })
+  }
+  else if($lis.length == 9 ){
+    $ul.append(append_input)
+    $('#previews li:last-child').css({
+      'width': `calc(100% - (20% * (${$lis.length} - 5 )))`
+    })
+  }
 });
