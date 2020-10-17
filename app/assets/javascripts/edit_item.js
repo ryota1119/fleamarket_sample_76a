@@ -1,5 +1,6 @@
 $(window).on("turbolinks:load", function() {
-  if(document.URL.match("edit")) {
+  var path = location.pathname ;
+  　if(document.URL.match("edit")) {
     var preview = $(
       `<div class="image-preview__wapper">
         <img class="preview">
@@ -37,23 +38,22 @@ $(window).on("turbolinks:load", function() {
         width: `calc(100% - (20% * ${$lis.length}))`,
       });
     } else if ($lis.length == 5) {
-      $li.addClass("image-preview");
       $ul.append(append_input);
       $("#previews li:last-child").css({
         width: `100%`,
       });
     } else if ($lis.length <= 9) {
-      $li.addClass("image-preview");
       $ul.append(append_input);
       $("#previews li:last-child").css({
         width: `calc(100% - (20% * (${$lis.length} - 5 )))`,
       });
     }
+    
     $inputs.each(function (num, input) {
       $(input).removeAttr("name");
       $(input).attr({
-        name: "item[images_attributes][" + num + "][src]",
-        id: "item_images_attributes_" + num + "_src",
+        name: "item[images_attributes][" + num + "][id]",
+        id: "item_images_attributes_" + num + "_id",
       });
     });
   };

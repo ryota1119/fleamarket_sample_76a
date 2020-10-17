@@ -30,14 +30,19 @@ class ItemsController < ApplicationController
 
   def update
     @parents = Category.where(ancestry: nil)
+    grandchild_category = @item.category
+    child_category = grandchild_category.parent
+    @category_children_array = Category.where(ancestry: child_category.ancestry)
+    @category_grandchildren_array = Category.where(ancestry: grandchild_category.ancestry)
     if params[:item].keys.include?("image") || params[:item].keys.include?("images_attributes") 
       if @item.valid?
+        binding.pry
         if params[:item].keys.include?("images_attributes")
-          binding.pry
           update_images_ids = params[:item][:images_attributes].values
           before_images_ids = @item.images.ids
+          binding.pry
           before_images_ids.each do |before_img_id|
-            Image.find(before_img_id).destroy unless update_images_ids.include?("#{before_img_id}") 
+            Image.find(before_img_id).destroy unless update_images_ids.include?("id"=>"#{before_img_id}")
           end
         else
           before_images_ids = @item.images.ids
@@ -45,8 +50,11 @@ class ItemsController < ApplicationController
             Image.find(before_img_id).destroy
           end
         end
-        @item.update(item_params)
-        redirect_to item_path(@item), notice: "商品を更新しました"
+        if @item.update(item_params)
+          redirect_to item_path(@item), notice: "商品を更新しました"
+        else
+          render action: :edit
+        end
       else
         render 'edit'
       end

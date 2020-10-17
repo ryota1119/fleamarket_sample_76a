@@ -15,8 +15,8 @@
                 %br
                 またはクリックしてファイルをアップロード
                 .input-area
-                  = image.file_field :src, class: "hidden image_upload",name: "item[images_attributes][#{@item.images.count}][src]", data:{index:""}
-            .image-preview__wapper
+                  = image.file_field :src, class: "hidden image_upload",name: "item[images_attributes][#{@item.images.count}][src]"
+            .image-preview__wapper{data:{index: @item.images.count - 1}}
               = image_tag image.object.src.to_s, class:"preview"
               .preview__btn
                 .preview__btn__delete

@@ -95,6 +95,10 @@ $(document).on('click','.preview__btn__delete',function(){
 
   $li.remove();
 
+  $delete_input = $(this).parents(".image-preview__wapper").data("index");
+  $document = document.getElementById(`item_images_attributes_${$delete_input}_id`);
+  $document.remove();
+
   $lis = $ul.find('.image-preview');
   $label = $ul.find('.input');
 
