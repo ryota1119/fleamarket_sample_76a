@@ -37,11 +37,9 @@ class ItemsController < ApplicationController
     @category_grandchildren_array = Category.where(ancestry: grandchild_category.ancestry)
     if params[:item].keys.include?("image") || params[:item].keys.include?("images_attributes") 
       if @item.valid?
-        binding.pry
         if params[:item].keys.include?("images_attributes")
           update_images_ids = params[:item][:images_attributes].values
           before_images_ids = @item.images.ids
-          binding.pry
           before_images_ids.each do |before_img_id|
             Image.find(before_img_id).destroy unless update_images_ids.include?("id"=>"#{before_img_id}")
           end
