@@ -249,48 +249,32 @@ body {
                         display: inline-block;
                         background-color: #fff;
                         text-decoration: none;
+                        color: #333;
+                        padding: 0 10px 0;
                         &__img {
                             width: 220px;
                             height: 150px;
-                            position: relative;
                             overflow: hidden;
                             margin: 0;
-                            z-index: auto img {
-                                position: absolute;
-                                top: 0;
-                                left: 0;
-                                right: 0;
-                                bottom: 0;
-                                width: 100%;
-                                z-index: auto;
-                                height: 150px;
-                                object-fit: cover;
+                            z-index: auto 
+                        }
+                        &__name {
+                            overflow: hidden;
+                            line-height: 1.5;
+                            font-size: 16px;
+                            text-align: left;
+                        }
+                        ul {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            .fas.fa-star {
+                                margin-left: 85px;
                             }
                         }
-                        &__body {
-                            background-color: #fff;
-                            color: #333;
-                            padding: 16px;
-                            &__name {
-                                overflow: hidden;
-                                line-height: 1.5;
-                                font-size: 16px;
-                                text-align: left;
-                            }
-                            &__details {
-                                ul {
-                                    display: flex;
-                                    align-items: center;
-                                    justify-content: space-between;
-                                    .fas.fa-star {
-                                        margin-left: 85px;
-                                    }
-                                }
-                                p {
-                                    font-size: 10px;
-                                    text-align: left;
-                                }
-                            }
+                        .item_tax {
+                            text-align: left;
+                            font-size: 10px;
                         }
                     }
                 }
@@ -358,7 +342,6 @@ body {
     }
 }
 
-
 // ----------------------------items/new.html.haml----------------------------
 
 .field_with_errors {
@@ -372,8 +355,7 @@ body {
 
 .sell-item__wrapper {
     width: 700px;
-    margin: 0 auto;
-    margin-bottom: 50px;
+    margin: 30px auto 50px;
     background-color: #fff;
 }
 
@@ -583,4 +565,32 @@ body {
 
 .precautions {
     font-size: 12px;
+}
+
+// ----------------------------items/search.html.haml----------------------------
+
+.search__main {
+    &__content {
+        width: 80%;
+        margin: 30px auto 30px;
+        &__ttl {
+            color: gray;
+        }
+        &__ul {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 10px;
+            li {
+                width: 20%;
+                background-color: #fff;
+                margin: 10px;
+                text-align: center;
+                .search__main__content__item {
+                    text-decoration: none;
+                    text-align: center;
+                    color: #333;
+                }
+            }
+        }
+    }
 }

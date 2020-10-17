@@ -1,13 +1,13 @@
 .header__inner
   .header__inner__upper
     %h1.header__inner__upper__left
-      = link_to "#", class: "header__icon" do
+      = link_to root_path, class: "header__icon" do
         = image_tag 'material/logo/logo.png', class: 'header__logo'
     .header__inner__upper__right
-      = form_tag '/', class: 'header__inner__upper__right__form' do
-        = text_field_tag :items, '', class: 'header__inner__upper__right__form__search-box', placeholder: 'キーワードから探す'
+      = form_with(url: search_items_path, local: true, method: :get, class: "header__inner__upper__right__form") do |f|
+        = f.text_field :keyword, placeholder: 'キーワードから探す', class: "header__inner__upper__right__form__search-box"  
         %button.header__inner__upper__right__form__search-btn
-          = image_tag 'material/icon/icon-search 1.png', class: 'header__inner__upper__right__form__search-btn__img'
+          = image_submit_tag 'material/icon/icon-search 1.png', class: 'header__inner__upper__right__form__search-btn__img'
   .header__inner__nav
     %ul.header__inner__nav__left
       %li.header__inner__nav__left__list

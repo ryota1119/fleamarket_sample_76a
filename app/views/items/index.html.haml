@@ -63,62 +63,20 @@
     %h2.main__pickup-container__ttl ピックアップカテゴリー
     .main__pickup-container__box
       %h3.main__pickup-container__box__txt 新規投稿商品
-      .main__pickup-container__box__lists
-        = link_to '#', class: "main__pickup-container__box__lists__list" do
-          .main__pickup-container__box__lists__list__img
-            = image_tag 'material/item1.png'
-          .main__pickup-container__box__lists__list__body
-            %h3.main__pickup-container__box__lists__list__body__name 白米
-            .main__pickup-container__box__lists__list__body__details 
+      %ul.main__pickup-container__box__lists
+        - @items.each do |item|
+          %li.main__pickup-container__box__lists__list
+            = link_to item_path(item) do
+              = image_tag "#{item.images[0].src}", class: "main__pickup-container__box__lists__list__img"
+            %h3.main__pickup-container__box__lists__list__name
+              = item.name
               %ul
-                %li 10000円
-                = icon('fas', 'star')
-                %li 1
-              %p (税込み)
-        = link_to '#', class: "main__pickup-container__box__lists__list" do
-          .main__pickup-container__box__lists__list__img
-            = image_tag 'material/item2.png', height: '150px', width: '220px'
-          .main__pickup-container__box__lists__list__body
-            %h3.main__pickup-container__box__lists__list__body__name ピザ
-            .main__pickup-container__box__lists__list__body__details
-              %ul
-                %li 1000円
-                = icon('fas', 'star')
-                %li 0
-              %p (税込み)
-        = link_to '#', class: "main__pickup-container__box__lists__list" do
-          .main__pickup-container__box__lists__list__img
-            = image_tag 'material/item3.png', height: '150px', width: '220px'
-          .main__pickup-container__box__lists__list__body
-            %h3.main__pickup-container__box__lists__list__body__name  生姜焼き
-            .main__pickup-container__box__lists__list__body__details
-              %ul
-                %li 30000円
-                = icon('fas', 'star')
-                %li 0
-              %p (税込み)
-        = link_to '#', class: "main__pickup-container__box__lists__list" do
-          .main__pickup-container__box__lists__list__img
-            = image_tag 'material/item4.png', height: '150px', width: '220px'
-          .main__pickup-container__box__lists__list__body
-            %h3.main__pickup-container__box__lists__list__body__name クリームコロッケ
-            .main__pickup-container__box__lists__list__body__details
-              %ul
-                %li 20000円
-                = icon('fas', 'star')
-                %li 0
-              %p (税込み)
-        = link_to '#', class: "main__pickup-container__box__lists__list" do
-          .main__pickup-container__box__lists__list__img
-            = image_tag 'material/item5.png', height: '150px', width: '220px'
-          .main__pickup-container__box__lists__list__body
-            %h3.main__pickup-container__box__lists__list__body__name  ぎょうざ
-            .main__pickup-container__box__lists__list__body__details
-              %ul
-                %li 10000円
-                = icon('fas', 'star')
-                %li 1
-              %p (税込み)
+                %li
+                  = "#{item.price}円"
+                %li
+                  = icon('fas', 'star')
+                  = "1"
+              %p.item_tax (税込み)
 
 .app-banner
   = render "app-banner"

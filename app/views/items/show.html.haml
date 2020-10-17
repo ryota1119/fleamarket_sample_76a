@@ -5,6 +5,9 @@
   .items__show__main__container
     .items__show__main__container__top
       .items__show__main__container__top__itemBox
+        .items__show__main__container__top__itemBox__status
+          - if @item.status == 2
+            売り切れ
         %h2.items__show__main__container__top__itemBox__name
           = @item.name
         .items__show__main__container__top__itemBox__body
@@ -17,9 +20,11 @@
                   = image_tag image.src.url, height: '100px', width: '100px'
         .items__show__main__container__top__itemBox__price
           = "¥#{@item.price}"
-          %br (税込)送料込
+          %span (税込)送料込
         .items__show__main__container__top__itemBox__description
-          = @item.description
+          .logo 商品詳細
+          .text
+            = @item.description
         .items__show__main__container__top__itemBox__table
           %table
             %tbody
@@ -32,8 +37,10 @@
                 %td
                   = link_to(@parent_category.name, '#')
                   %br/
+                  %span >
                   = link_to(@child_category.name, '#')
                   %br/
+                  %span >
                   = link_to(@grand_child_category.name, '#')
               %tr
                 %th ブランド
@@ -56,14 +63,14 @@
                 %td
                   = @item.shipping_date
         %ul.items__show__main__container__top__itemBox__btn
-          - if user_signed_in? && current_user.id != @item.user_id
+          - if user_signed_in? && current_user.id != @item.user_id && @item.status == 1
             %li.items__show__main__container__top__itemBox__btn__buy
-              = link_to '購入画面に進む', '#'
+              = link_to '購入画面に進む', item_buyers_path(@item.id)
           - if user_signed_in? && current_user.id == @item.user.id
             %li.items__show__main__container__top__itemBox__btn__edit
               = link_to '編集', '#'
             %li.items__show__main__container__top__itemBox__btn__delete
-              = link_to '削除', '#'
+              = link_to '削除', item_path(@item), method: :delete
         
     -#   items__show__main__container__top__itemBox__optionalArea
     -#   お気に入り登録機能、通報機能を後に実装
@@ -71,9 +78,6 @@
     -#   コメントボックスを後に実装
     -# .items__show__main__container__relationItems
     -# 関連商品の表示機能を後に実装
-
-.app-banner
-  = render 'app-banner'
 
 %footer.footer
   = render 'footer'

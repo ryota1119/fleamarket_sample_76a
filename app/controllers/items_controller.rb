@@ -1,9 +1,10 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:edit, :update, :show]
+  before_action :set_item, only: [:edit, :update, :show, :destroy]
   before_action :show_all_instance, only: [:show, :edit, :update, :destroy]
   before_action :category_parent_array, only: [:new, :create, :edit, :update]
 
   def index
+    @items = Item.all.limit(5).order("created_at DESC")
   end
 
   def new
@@ -64,11 +65,18 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
     @image = @item.images
     @grand_child_category = @item.category
     @child_category = @grand_child_category.parent
     @parent_category = @child_category.parent
+  end
+
+  def destroy
+    if @item.destroy
+      redirect_to root_path
+    else
+      render :show
+    end
   end
 
   def get_category_children
@@ -79,6 +87,15 @@ class ItemsController < ApplicationController
     @category_grandchildren = Category.find("#{params[:child_id]}").children
   end
   
+
+  def search
+    @items = Item.search(params[:keyword]).limit(40).order("created_at DESC")
+    @keyword = params[:keyword]
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
+  end
 
   private
   
