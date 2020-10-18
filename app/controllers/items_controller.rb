@@ -52,7 +52,7 @@ class ItemsController < ApplicationController
         if @item.update(item_params)
           redirect_to item_path(@item), notice: "商品を更新しました"
         else
-          render action: :edit
+          render 'edit'
         end
       else
         render 'edit'
