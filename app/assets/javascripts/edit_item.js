@@ -1,6 +1,11 @@
 $(window).on("turbolinks:load", function() {
   var path = location.pathname ;
-  　if(document.URL.match("edit")) {
+  var directory01 = path.split("/");
+  var directory02 = directory01.slice(1,3);
+  var directory03 = directory01.slice(2, 3);
+  var directory04 = "/" + directory02.join('/');
+
+  　if(directory04 == `/items/${directory03}`) {
     var preview = $(
       `<div class="image-preview__wapper">
         <img class="preview">
