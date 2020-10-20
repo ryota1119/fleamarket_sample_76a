@@ -68,7 +68,7 @@
               = link_to '購入画面に進む', item_buyers_path(@item.id)
           - if user_signed_in? && current_user.id == @item.user.id
             %li.items__show__main__container__top__itemBox__btn__edit
-              = link_to '編集', '#'
+              = link_to '編集', edit_item_path(@item)
             %li.items__show__main__container__top__itemBox__btn__delete
               = link_to '削除', item_path(@item), method: :delete
         

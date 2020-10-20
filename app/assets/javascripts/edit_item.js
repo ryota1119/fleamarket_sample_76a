@@ -1,6 +1,5 @@
 $(window).on("turbolinks:load", function() {
-  var path = location.pathname ;
-  　if(document.URL.match("edit")) {
+  if(!document.URL.match("new")) {
     var preview = $(
       `<div class="image-preview__wapper">
         <img class="preview">
