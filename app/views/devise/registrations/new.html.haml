@@ -24,22 +24,20 @@
           = f.label :password,"パスワード",class:"sessions__container__form__box-title"
           - if @minimum_password_length
             %em
-              (#{@minimum_password_length} 文字以上)
+              (7文字以上)
           %span.sessions__container__form__box-req 必須
           %br/
-          = f.password_field :password, prefix:'',class:"sessions__container__form__box-inputbox",placeholder:"○文字以上の英数字"
+          = f.password_field :password, prefix:'',class:"sessions__container__form__box-inputbox",placeholder:"7文字以上の英数字"
           %p ※ 英字と数字の両方を含めて設定してください
 
         .field.sessions__container__form__box
           = f.label :password_confirmation,"パスワード(確認用)",class:"sessions__container__form__box-title"
           %span.sessions__container__form__box-req 必須
           %br/
-          = f.password_field :password_confirmation, prefix:'',class:"sessions__container__form__box-inputbox",placeholder:"○文字以上の英数字"
+          = f.password_field :password_confirmation, prefix:'',class:"sessions__container__form__box-inputbox",placeholder:"7文字以上の英数字"
           %p ※ 英字と数字の両方を含めて設定してください
+          %br/
 
-          %input.pass-checkbox{type: "checkbox"}
-          %label.pass-checkbox パスワードを表示する
-      
         .sessions__container__form__box
           %h3 本人確認
           %p 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。

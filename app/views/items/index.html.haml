@@ -84,4 +84,5 @@
 %footer.footer
   = render "footer"
 
-= render "purchase_btn"
+- if user_signed_in?
+  = render "purchase_btn"

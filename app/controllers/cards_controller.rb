@@ -3,7 +3,7 @@ class CardsController < ApplicationController
   
   def new
     card = Card.where(user_id: current_user.id)
-    redirect_to card_path(current_user.id) if card.exists?
+    redirect_to card_path(card) if card.exists?
   end
 
 
@@ -19,7 +19,7 @@ class CardsController < ApplicationController
       ) 
       @card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
       if @card.save
-        redirect_to card_path(current_user.id)
+        redirect_to card_path(@card)
       else
         redirect_to pay_cards_path
       end
@@ -37,7 +37,6 @@ class CardsController < ApplicationController
   end
 
   def show #Cardのデータpayjpに送り情報を取り出す
-    @item = Item.find(params[:id])
     if @card.blank?
       redirect_to new_card_path 
     else
