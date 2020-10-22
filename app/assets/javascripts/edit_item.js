@@ -1,4 +1,5 @@
-$(window).on("turbolinks:load", function() {
+$(window).on("load", function() {
+  console.log("test");
   if(!document.URL.match("new")) {
     var preview = $(
       `<div class="image-preview__wapper">
