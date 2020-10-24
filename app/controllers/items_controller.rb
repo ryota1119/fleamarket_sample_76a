@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
   before_action :category_parent_array, only: [:new, :create, :edit, :update]
 
   def index
-    @items = Item.all.limit(5).order("created_at DESC")
+    @items = Item.where(status: 1).limit(5).order("created_at DESC")
   end
 
   def new
