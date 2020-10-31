@@ -63,14 +63,15 @@
                 %td
                   = @item.shipping_date
         %ul.items__show__main__container__top__itemBox__btn
-          - if user_signed_in? && current_user.id != @item.user_id && @item.status == 1
-            %li.items__show__main__container__top__itemBox__btn__buy
-              = link_to '購入画面に進む', item_buyers_path(@item.id)
-          - if user_signed_in? && current_user.id == @item.user.id
-            %li.items__show__main__container__top__itemBox__btn__edit
-              = link_to '編集', edit_item_path(@item)
-            %li.items__show__main__container__top__itemBox__btn__delete
-              = link_to '削除', item_path(@item), method: :delete
+          .items__show__main__container__top__itemBox__btn__select
+            - if user_signed_in? && current_user.id != @item.user_id && @item.status == 1
+              %li.items__show__main__container__top__itemBox__btn__select__buy
+                = link_to '購入画面に進む', item_buyers_path(@item.id)
+            - if user_signed_in? && current_user.id == @item.user.id
+              %li.items__show__main__container__top__itemBox__btn__select__edit
+                = link_to '編集', edit_item_path(@item)
+              %li.items__show__main__container__top__itemBox__btn__select__delete
+                = link_to '削除', item_path(@item), method: :delete
         
     -#   items__show__main__container__top__itemBox__optionalArea
     -#   お気に入り登録機能、通報機能を後に実装
