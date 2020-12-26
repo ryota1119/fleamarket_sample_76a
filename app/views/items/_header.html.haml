@@ -17,7 +17,7 @@
     - if user_signed_in?
       %ul.header__inner__nav__right
         %li.header__inner__nav__right__list
-          = link_to "マイページ", logout_user_path(current_user)
+          = link_to "マイページ", user_path(current_user)
     - else
       %ul.header__inner__nav__right
         %li.header__inner__nav__right__list
